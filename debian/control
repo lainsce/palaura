@@ -1,4 +1,4 @@
-Source: com.github.lainsce.paraula
+Source: com.github.lainsce.palaura
 Section: x11
 Priority: extra
 Maintainer: Lains <lainsce@airmail.cc>
@@ -9,12 +9,10 @@ Build-Depends: meson,
                valac (>= 0.26),
                libsoup2.4-dev (>= 2.25.2),
                libjson-glib-dev (>= 0.10),
-               gio-2.0,
-               gthread-2.0,
-               gee-0.8
+               libgee-0.8
 
 Standards-Version: 3.9.3
-Package: com.github.lainsce.paraula
+Package: com.github.lainsce.palaura
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Find any word's definition with this handy dictionary.

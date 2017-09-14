@@ -1,5 +1,5 @@
 # Name our project
-project('com.github.lainsce.paraula', ['vala', 'c'],
+project('com.github.lainsce.palaura', ['vala', 'c'],
     version: '0.1.0'
 )
 
@@ -13,7 +13,7 @@ conf = configuration_data()
 # Get the package data directory under Meson
 pkgdatadir = join_paths([ get_option('prefix'),
                           get_option('datadir'),
-                          'com.github.lainsce.paraula' ])
+                          'com.github.lainsce.palaura' ])
 
 conf.set_quoted('PKGDATADIR', pkgdatadir)
 

@@ -1,6 +1,6 @@
-# ![icon](data/icon.png) Paraula
+# ![icon](data/icon.png) Palaura
 ## Find any word's definition with this handy dictionary.
-[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.lainsce.paraula)
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.lainsce.palaura)
 
 ![Screenshot](data/shot.png)
 
@@ -14,9 +14,6 @@ gtk+-3.0
 meson
 libsoup2.4
 libjson-glib
-libgio
-libgthread
-libgee
 ```
 
 ## Building

@@ -1,4 +1,10 @@
-com.github.lainsce.palaura (0.1.0) xenial; urgency=low
+com.github.lainsce.palaura (0.3.0) xenial; urgency=low
+
+  * AppCenter fixes (yet again).
+
+ -- Lains <lainsce@airmail.cc>  Thu, 14 September 2017 11:02:00 -0300
+
+com.github.lainsce.palaura (0.2.0) xenial; urgency=low
 
   * AppCenter fixes.
 

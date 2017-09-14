@@ -8,8 +8,7 @@ Build-Depends: meson,
                libgranite-dev (>= 0.3.0),
                valac (>= 0.26),
                libsoup2.4-dev (>= 2.25.2),
-               libjson-glib-dev (>= 0.10),
-               libgee-0.8
+               libjson-glib-dev (>= 0.10)
 
 Standards-Version: 3.9.3
 Package: com.github.lainsce.palaura

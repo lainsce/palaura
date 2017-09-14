@@ -1,6 +1,6 @@
 src/Constants/Stylesheet.vala
 src/Core/Definition.vala
-src/Core/PearsonApiClient.vala
+src/Core/DictCore.vala
 src/Views/View.vala
 src/Views/WordListView.vala
 src/Views/SearchView.vala

@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.palaura', ['vala', 'c'],
-    version: '0.4.0'
+    version: '0.5.0'
 )
 
 # Import main lib files
@@ -37,7 +37,7 @@ executable(
     meson.project_name(),
     'src/Constants/Stylesheet.vala',
     'src/Core/Definition.vala',
-    'src/Core/PearsonApiClient.vala',
+    'src/Core/DictCore.vala',
     'src/Views/View.vala',
     'src/Views/WordListView.vala',
     'src/Views/SearchView.vala',

@@ -63,6 +63,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_title ("Palaura");
+        headerbar.has_subtitle = false;
         headerbar.pack_start (button_stack);
         headerbar.pack_end (search_entry);
         set_titlebar (headerbar);

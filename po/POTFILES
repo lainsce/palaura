@@ -1,0 +1,11 @@
+src/Constants/Stylesheet.vala
+src/Core/Definition.vala
+src/Core/PearsonApiClient.vala
+src/Views/View.vala
+src/Views/WordListView.vala
+src/Views/SearchView.vala
+src/Views/NormalView.vala
+src/Views/DefinitionView.vala
+src/Widgets/WordListRow.vala
+src/Application.vala
+src/MainWindow.vala

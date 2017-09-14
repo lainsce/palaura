@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.github.lainsce.paraula.desktop</id>
+    <metadata_license>CC0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Paraula</name>
+    <summary>Find any word's definition with this handy dictionary</summary>
+    <description>
+        <p>Find any word's definition with this handy dictionary in hand</p>
+        <ul>
+            <li>Quit anytime with the shortcut Ctrl + Q</li>
+        </ul>
+    </description>
+    <provides>
+        <binary>com.github.lainsce.paraula</binary>
+    </provides>
+    <developer_name>Lains</developer_name>
+    <url type="homepage">https://github.com/lainsce/paraula/</url>
+    <url type="bugtracker">https://github.com/lainsce/paraula/issues</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/lainsce/paraula/master/data/shot.png</image>
+        </screenshot>
+    </screenshots>
+    <releases>
+      <release version="0.1.0" date="2017-09-15">
+        <description>
+          <p>Release: Words Are Everything</p>
+          <ul>
+            <li>First Stable release</li>
+          </ul>
+        </description>
+      </release>
+    </releases>
+    <custom>
+        <value key="x-appcenter-color-primary">#a74d49</value>
+        <value key="x-appcenter-color-primary-text">#eeeeee</value>
+    </custom>
+</component>

@@ -1,0 +1,10 @@
+build/
+~*
+*~
+debian/com.github.lainsce.palaura.debhelper.log
+debian/com.github.lainsce.palaura.substvars
+debian/com.github.lainsce.palaura/
+debian/debhelper-build-stamp
+debian/files
+obj-x86_64-linux-gnu/
+po/*.po

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Paraula
+Comment=Track the virtual currencies in real world currency value
+Exec=com.github.lainsce.paraula
+Icon=com.github.lainsce.paraula
+Keywords=Words;Dictionary;Search;
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;Utility;

@@ -6,15 +6,15 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack button_stack;
     private Gtk.Button return_button;
 
-    private Paraula.SearchView search_view;
-    private Paraula.NormalView normal_view;
-    private Paraula.DefinitionView definition_view;
+    private Palaura.SearchView search_view;
+    private Palaura.NormalView normal_view;
+    private Palaura.DefinitionView definition_view;
 
     private Gee.LinkedList<View> return_history;
 
     public MainWindow(Gtk.Application app) {
         Object (application: app,
-                title: _("Paraula"),
+                title: _("Palaura"),
                 height_request: 650,
                 width_request: 700);
 
@@ -36,7 +36,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
 
         Granite.Widgets.Utils.set_theming_for_screen (
             this.get_screen (),
-            Paraula.Stylesheet.APP,
+            Palaura.Stylesheet.APP,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
     }
@@ -49,7 +49,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
     construct
     {
         var context = this.get_style_context ();
-        context.add_class ("paraula-window");
+        context.add_class ("palaura-window");
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = "Search words";
@@ -67,9 +67,9 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         headerbar.pack_end (search_entry);
         set_titlebar (headerbar);
 
-        search_view = new Paraula.SearchView();
-        normal_view = new Paraula.NormalView();
-        definition_view = new Paraula.DefinitionView();
+        search_view = new Palaura.SearchView();
+        normal_view = new Palaura.NormalView();
+        definition_view = new Palaura.DefinitionView();
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (normal_view);

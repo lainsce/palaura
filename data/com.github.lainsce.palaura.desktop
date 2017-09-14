@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Paraula
+Name=Palaura
 Comment=Find any word definition with this handy dictionary
-Exec=com.github.lainsce.paraula
-Icon=com.github.lainsce.paraula
+Exec=com.github.lainsce.palaura
+Icon=com.github.lainsce.palaura
 Keywords=Words;Dictionary;Search;
 Terminal=false
 Type=Application

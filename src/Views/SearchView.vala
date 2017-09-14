@@ -1,4 +1,4 @@
-public class Paraula.SearchView : Palaura.View {
+public class Palaura.SearchView : Palaura.View {
 
     int64 last_ts;
     Views.WordListView list_view;
@@ -27,7 +27,7 @@ public class Paraula.SearchView : Palaura.View {
 
     construct {
         list_view = new Views.WordListView ();
-        list_view.get_style_context ().add_class ("paraula-view");
+        list_view.get_style_context ().add_class ("palaura-view");
 
         spinner_support_container = new Gtk.Box(Gtk.Orientation.VERTICAL, 14);
         list_view.stack.add (spinner_support_container);

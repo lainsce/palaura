@@ -1,4 +1,4 @@
-public class Paraula.DefinitionView : Palaura.View {
+public class Palaura.DefinitionView : Palaura.View {
 
     Gtk.ScrolledWindow scrolled_window;
     Gtk.TextView text_view;
@@ -15,7 +15,7 @@ public class Paraula.DefinitionView : Palaura.View {
     Core.Definition definition;
 
     construct {
-        this.get_style_context ().add_class ("paraula-view");
+        this.get_style_context ().add_class ("palaura-view");
         scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.set_policy (Gtk.PolicyType.NEVER,
             Gtk.PolicyType.AUTOMATIC);
@@ -23,7 +23,7 @@ public class Paraula.DefinitionView : Palaura.View {
         add (scrolled_window);
 
         text_view = new Gtk.TextView ();
-        text_view.get_style_context ().add_class ("paraula-view");
+        text_view.get_style_context ().add_class ("palaura-view");
         text_view.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         text_view.set_editable (false);
         text_view.set_cursor_visible (false);

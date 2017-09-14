@@ -1,4 +1,4 @@
-namespace Paraula {
+namespace Palaura {
     public class Views.WordListView : Gtk.ScrolledWindow {
         public signal void show_definition (Core.Definition definition);
         protected Gtk.ListBox list_box;

@@ -78,16 +78,6 @@ public class Palaura.DefinitionView : Palaura.View {
             buffer.insert_with_tags (ref iter, @"$(i + 1). ", -1, tag_sense_numbering);
             buffer.insert_with_tags (ref iter, @"\t$definition_str\n", -1, tag_sense_definition);
 
-            if(senses[i].synonym != null) {
-                buffer.insert_with_tags (ref iter, "Synonym ", -1 , tag_sense_caption);
-                buffer.insert_with_tags (ref iter, @" $(senses[i].synonym) \n", -1 , tag_sense_description);
-            }
-
-            if(senses[i].opposite != null) {
-                buffer.insert_with_tags (ref iter, "Opposite ", -1 , tag_sense_caption);
-                buffer.insert_with_tags (ref iter, @" $(senses[i].opposite) \n", -1 , tag_sense_description);
-            }
-
             var examples = senses[i].get_examples ();
             for (int j = 0; j < examples.length; j++) {
                 buffer.insert_with_tags (ref iter, @"◆ $(examples[i].text)", -1, tag_sense_examples);

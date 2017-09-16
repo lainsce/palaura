@@ -191,12 +191,6 @@ public class Core.Definition : Object {
             if (root.has_member ("signpost"))
                 obj.signpost = root.get_string_member ("signpost");
 
-            if (root.has_member ("synonym"))
-                obj.synonym = root.get_string_member ("synonym");
-
-            if (root.has_member ("opposite"))
-                obj.opposite = root.get_string_member ("opposite");
-
             return obj;
         }
     }

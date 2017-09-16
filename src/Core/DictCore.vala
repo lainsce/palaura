@@ -1,19 +1,15 @@
-public errordomain ApiError {
-    API_RESPONSE_NOT_SUCCESS
-}
+public class Core.Dict {
 
-public class Core.PearsonDictionaryApiClient {
-
-    public Soup.Message http_get_entries(string dictionary, string headword, int limit) throws GLib.Error {
-        string uri = @"http://api.pearson.com/v2/dictionaries/$dictionary/entries?limit=$limit&headword=$headword*";
+    public Soup.Message get_entries(string word) throws GLib.Error {
+        string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/en/$word";
 
         var session = new Soup.Session ();
         var message = new Soup.Message ("GET", uri);
+        Soup.MessageHeaders headers = message.request_headers;
+        headers.append ("Accept","application/json");
+        headers.append ("app_id","db749a02");
+        headers.append ("app_key","bf44ba104ce6d42d444db54fa878a52b");
         session.send_message (message);
-
-        if(message.status_code != 200)
-            throw new ApiError.API_RESPONSE_NOT_SUCCESS(@"Undefined response $(message.status_code)");
-
         return message;
     }
 
@@ -23,15 +19,16 @@ public class Core.PearsonDictionaryApiClient {
 
         Core.Definition[] definitions = {};
 
-        ThreadFunc<void*> run = () => {
+        GLib.ThreadFunc<void*> run = () => {
             try {
                 var parser = new Json.Parser();
-                parser.load_from_data( (string) http_get_entries ("ldoce5", word, 10).response_body.flatten().data, -1);
+                parser.load_from_data( (string) get_entries (word).response_body.data, -1);
 
+                // TODO: Make this result in every entry instead of erroring out.
                 var root_object = parser.get_root().get_object ();
                 var results = root_object.get_array_member("results");
 
-                stdout.printf("Searching %s, %lld obtained of %lld results\n\n", word, (int64) results.get_length(), (int64) root_object.get_int_member("total"));
+                stdout.printf("\nSearching %s\n", word);
                 foreach (var w in results.get_elements())
                     definitions += Core.Definition.parse_json (w.get_object ());
 

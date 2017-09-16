@@ -8,13 +8,13 @@ public class Palaura.SearchView : Palaura.View {
     Gtk.Spinner spinner;
     Gtk.Label label_loading_info;
 
-    Core.PearsonDictionaryApiClient client;
+    Core.Dict client;
 
     string last_searched_word;
 
     public SearchView() {
         search_results = new GLib.ListStore (typeof (Core.Definition));
-        client = new Core.PearsonDictionaryApiClient();
+        client = new Core.Dict();
 
         list_view.bind_model (search_results, (obj) => {
                 return new Widgets.WordListRow(obj as Core.Definition);

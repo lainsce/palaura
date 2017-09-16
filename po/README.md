@@ -1,4 +1,4 @@
-# How to Translate Paraula
+# How to Translate Palaura
 ## Basics
 
 * You'll need to know your language's code (ex. en = English).
@@ -6,4 +6,4 @@
 * Translate the .pot file using the PO editor of your choice (I recommend POEdit).
 * Save it as <language_code>.po in this folder.
 
-And that's it! You've successfully translated Paraula for your language!
+And that's it! You've successfully translated Palaura for your language!

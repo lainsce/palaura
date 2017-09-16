@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import subprocess
+import platform
 
 schemadir = os.path.join(os.environ['MESON_INSTALL_PREFIX'], 'share', 'glib-2.0', 'schemas')
 icondir = os.path.join(os.environ['MESON_INSTALL_PREFIX'], 'share', 'icons', 'hicolor')

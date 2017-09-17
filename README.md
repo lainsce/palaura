@@ -22,11 +22,11 @@ Simply clone this repo, then:
 
 ```
 $ meson build && cd build
-$ mesonconf -Dprefix=/usr
+$ meson configure -Dprefix=/usr
 $ sudo ninja install
 ```
 
 
 ## Miscellanea
 
-Uses the Pearson API for definitions & lookups.
+Uses the Oxford API for definitions & lookups.

@@ -77,13 +77,8 @@ public class Palaura.DefinitionView : Palaura.View {
             buffer.insert_with_tags (ref iter, @"$(i + 1). ", -1, tag_sense_numbering);
             buffer.insert_with_tags (ref iter, @"\t$definition_str\n", -1, tag_sense_definition);
 
-            string example_str = "";
             var examples = senses[i].get_examples ();
-            for (int j = 0; j < examples.length; j++) {
-                example_str = examples[i].text;
-            }
-            buffer.insert_with_tags (ref iter, @"◆ ", -1, tag_sense_numbering);
-            buffer.insert_with_tags (ref iter, @"$example_str\n", -1, tag_sense_examples);
+            buffer.insert_with_tags (ref iter, @"◆\t$(examples[i].text)\n", -1, tag_sense_examples);
         }
     }
 

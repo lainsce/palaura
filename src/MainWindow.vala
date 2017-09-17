@@ -33,12 +33,6 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         normal_view.show_definition.connect (show_definition);
 
         return_button.clicked.connect (on_return_clicked);
-
-        Granite.Widgets.Utils.set_theming_for_screen (
-            this.get_screen (),
-            Palaura.Stylesheet.APP,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
     }
 
     public void show_definition (Core.Definition definition) {
@@ -48,6 +42,9 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
 
     construct
     {
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("/com/github/lainsce/palaura/stylesheet.css");
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         var context = this.get_style_context ();
         context.add_class ("palaura-window");
 

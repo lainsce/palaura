@@ -7,6 +7,13 @@ project('com.github.lainsce.palaura', ['vala', 'c'],
 gnome = import('gnome')
 i18n = import('i18n')
 
+# Compile the GResources for this project
+asresources = gnome.compile_resources(
+    'as-resources', 'data/style.gresource.xml',
+    source_dir: 'data',
+    c_name: 'as'
+)
+
 # Set this for convenience
 conf = configuration_data()
 
@@ -35,7 +42,6 @@ cc = meson.get_compiler('c')
 # Let's define our executable
 executable(
     meson.project_name(),
-    'src/Constants/Stylesheet.vala',
     'src/Core/Definition.vala',
     'src/Core/DictCore.vala',
     'src/Views/View.vala',
@@ -46,6 +52,7 @@ executable(
     'src/Widgets/WordListRow.vala',
     'src/Application.vala',
     'src/MainWindow.vala',
+    asresources,
     c_args: c_args,
     dependencies: [
         dependency('granite'),

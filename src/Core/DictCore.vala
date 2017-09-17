@@ -1,7 +1,7 @@
 public class Core.Dict {
 
-    public Soup.Message get_entries(string word) throws GLib.Error {
-        string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/en/$word";
+    public Soup.Message get_entries(string text) throws GLib.Error {
+        string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/en/$text";
 
         var session = new Soup.Session ();
         var message = new Soup.Message ("GET", uri);
@@ -13,23 +13,24 @@ public class Core.Dict {
         return message;
     }
 
-    public async Core.Definition[] search_word(string word) {
+    public async Core.Definition[] search_text(string word) {
 
-        SourceFunc callback = search_word.callback;
+        SourceFunc callback = search_text.callback;
 
         Core.Definition[] definitions = {};
 
-        GLib.ThreadFunc<void*> run = () => {
+        ThreadFunc<void*> run = () => {
             try {
                 var parser = new Json.Parser();
-                parser.load_from_data( (string) get_entries (word).response_body.data, -1);
+                parser.load_from_data( (string) get_entries (word).response_body.flatten().data, -1);
 
-                // TODO: Make this result in every entry instead of erroring out.
                 var root_object = parser.get_root().get_object ();
                 var results = root_object.get_array_member("results");
+                var obj_results = results.get_object_element(0);
+                var lexentry = obj_results.get_array_member("lexicalEntries");
 
-                stdout.printf("\nSearching %s\n", word);
-                foreach (var w in results.get_elements())
+                stdout.printf("Searching %s\n\n", word);
+                foreach (var w in lexentry.get_elements())
                     definitions += Core.Definition.parse_json (w.get_object ());
 
                 Idle.add((owned) callback);

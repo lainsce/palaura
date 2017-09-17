@@ -69,9 +69,13 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         set_titlebar (headerbar);
 
         search_view = new Palaura.SearchView();
+        search_view.get_style_context ().add_class ("palaura-view");
         normal_view = new Palaura.NormalView();
+        normal_view.get_style_context ().add_class ("palaura-view");
         definition_view = new Palaura.DefinitionView();
+        definition_view.get_style_context ().add_class ("palaura-view");
         stack = new Gtk.Stack ();
+        stack.get_style_context ().add_class ("palaura-view");
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (normal_view);
         stack.add (search_view);

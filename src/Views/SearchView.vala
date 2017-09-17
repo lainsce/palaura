@@ -27,7 +27,6 @@ public class Palaura.SearchView : Palaura.View {
 
     construct {
         list_view = new Views.WordListView ();
-        list_view.get_style_context ().add_class ("palaura-view");
 
         spinner_support_container = new Gtk.Box(Gtk.Orientation.VERTICAL, 14);
         list_view.stack.add (spinner_support_container);
@@ -64,8 +63,8 @@ public class Palaura.SearchView : Palaura.View {
 		spinner.active = true;
 
         if(!append) search_results.remove_all();
-        client.search_word.begin (word, (obj, res) => {
-                Core.Definition[] definitions = client.search_word.end(res);
+        client.search_text.begin (word, (obj, res) => {
+                Core.Definition[] definitions = client.search_text.end(res);
                 if(last_ts > ts) return;
                 last_ts = ts;
                 if(definitions.length == 0) {

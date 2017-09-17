@@ -3,7 +3,6 @@ public abstract class Palaura.View : Gtk.Stack {
     
     construct
     {
-    	this.get_style_context ().add_class ("paraula-view");
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         expand = true;
     }

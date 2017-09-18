@@ -50,7 +50,7 @@
       </release>
     </releases>
     <custom>
-        <value key="x-appcenter-color-primary">#a74d49</value>
-        <value key="x-appcenter-color-primary-text">#eeeeee</value>
+        <value key="x-appcenter-color-primary">#ddbdbd</value>
+        <value key="x-appcenter-color-primary-text">#333333</value>
     </custom>
 </component>

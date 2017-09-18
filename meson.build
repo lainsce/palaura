@@ -7,6 +7,8 @@ project('com.github.lainsce.palaura', ['vala', 'c'],
 gnome = import('gnome')
 i18n = import('i18n')
 
+add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
+
 # Compile the GResources for this project
 asresources = gnome.compile_resources(
     'as-resources', 'data/style.gresource.xml',
@@ -44,6 +46,7 @@ executable(
     meson.project_name(),
     'src/Core/Definition.vala',
     'src/Core/DictCore.vala',
+    'src/Core/MyJsonReader.vala',
     'src/Views/View.vala',
     'src/Views/WordListView.vala',
     'src/Views/SearchView.vala',

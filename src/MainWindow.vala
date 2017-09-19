@@ -80,6 +80,14 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         add (stack);
 
         return_history = new Gee.LinkedList<Palaura.View> ();
+
+        var settings = AppSettings.get_default ();
+        int x = settings.window_x;
+        int y = settings.window_y;
+
+        if (x != -1 && y != -1) {
+            move (x, y);
+        }
     }
 
     private void trigger_search () {
@@ -130,5 +138,15 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         }
 
         pop_view ();
+    }
+
+    public override bool delete_event (Gdk.EventAny event) {
+        var settings = AppSettings.get_default ();
+        
+        int x, y;
+        get_position (out x, out y);
+        settings.window_x = x;
+        settings.window_y = y;
+        return false;
     }
 }

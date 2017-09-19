@@ -11,6 +11,15 @@ public class Palaura.App : Granite.Application {
         app_launcher = "com.github.lainsce.palaura.desktop";
         app_icon = "com.github.lainsce.palaura";
         exec_name = "com.github.lainsce.palaura";
+
+        var quit_action = new SimpleAction ("quit", null);
+        add_action (quit_action);
+        add_accelerator ("<Control>q", "app.quit", null);
+        quit_action.activate.connect (() => {
+            if (window != null) {
+                window.destroy ();
+            }
+        });
     }
 
     public override void activate () {

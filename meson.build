@@ -44,6 +44,7 @@ cc = meson.get_compiler('c')
 # Let's define our executable
 executable(
     meson.project_name(),
+    'src/Constants/AppSettings.vala',
     'src/Core/Definition.vala',
     'src/Core/DictCore.vala',
     'src/Core/MyJsonReader.vala',

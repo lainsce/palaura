@@ -1,5 +1,5 @@
 <schemalist>
-	<schema id="com.github.lainsce.paraula" path="/com/github/lainsce/paraula/">
+	<schema id="com.github.lainsce.palaura" path="/com/github/lainsce/palaura/">
 		<key name="window-x" type="i">
 			<default>-1</default>
 			<summary>Window position</summary>

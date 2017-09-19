@@ -16,8 +16,8 @@ public class Palaura.App : Granite.Application {
         add_action (quit_action);
         add_accelerator ("<Control>q", "app.quit", null);
         quit_action.activate.connect (() => {
-            if (window != null) {
-                window.destroy ();
+            if (main_window != null) {
+                main_window.destroy ();
             }
         });
     }

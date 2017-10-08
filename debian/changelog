@@ -1,8 +1,8 @@
-com.github.lainsce.palaura (0.6.0) xenial; urgency=low
+com.github.lainsce.palaura (1.0.0) xenial; urgency=low
 
-  * This is the first stable now with all the fixes.
+  * An API/Backend change..
 
- -- Lains <lainsce@airmail.cc>  Sun, 17 September 2017 17:56:00 -0300
+ -- Lains <lainsce@airmail.cc>  Sat, 07 October 2017 03:56:00 -0300
 
 com.github.lainsce.palaura (0.5.0) xenial; urgency=low
 

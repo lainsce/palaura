@@ -2,7 +2,7 @@ public errordomain MyError {
     INVALID_FORMAT
 }
 
-public class MyJsonReader {
+public class Core.MyJsonReader {
 
     public string word                        { public get; public set; }
     public string audioFile                   { public get; public set; }
@@ -10,7 +10,7 @@ public class MyJsonReader {
 
     public MyJsonReader (string text) {
         try {
-            
+
             Json.Parser parser = new Json.Parser ();
             parser.load_from_data (text);
 
@@ -30,7 +30,7 @@ public class MyJsonReader {
             unowned Json.Object obj = node.get_object ();
 
             foreach (unowned string name in obj.get_members ()) {
-                 
+
                 switch (name) {
                     case "results":
                         unowned Json.Node node_results = obj.get_member (name);
@@ -39,7 +39,7 @@ public class MyJsonReader {
                 }
             }
         } catch (Error e) {
-            GLib.warning (e.message);   
+            GLib.warning (e.message);
         }
     }
 
@@ -47,7 +47,7 @@ public class MyJsonReader {
         try {
             if (node.get_node_type () != Json.NodeType.ARRAY) {
                 throw new MyError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
-            } 
+            }
 
             unowned Json.Array array = node.get_array ();
 
@@ -94,7 +94,7 @@ public class MyJsonReader {
         try {
             if (node.get_node_type () != Json.NodeType.ARRAY) {
                 throw new MyError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
-            } 
+            }
 
             unowned Json.Array array = node.get_array ();
 
@@ -137,7 +137,7 @@ public class MyJsonReader {
         try {
             if (node.get_node_type () != Json.NodeType.ARRAY) {
                 throw new MyError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
-            } 
+            }
 
             unowned Json.Array array = node.get_array ();
 

@@ -23,9 +23,9 @@
         </screenshot>
     </screenshots>
     <releases>
-      <release version="0.6.0" date="2017-09-17">
+      <release version="1.0.0" date="2017-10-07">
         <description>
-          <p>Release: API Change</p>
+          <p>Release: Faster Lookups</p>
           <ul>
             <li>Port to Oxford API for the Dictionary</li>
           </ul>

@@ -33,4 +33,4 @@ $ sudo ninja install
 
 ## Miscellanea
 
-Uses the Oxford API for definitions & lookups.
+Uses the Oxford API for definitions and lookups.

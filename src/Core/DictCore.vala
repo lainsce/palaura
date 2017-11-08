@@ -1,6 +1,8 @@
 public class Core.Dict {
-    public async GLib.InputStream get_entries (string text) throws GLib.Error {
+    public async string get_entries (string text) throws GLib.Error {
         string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/en/$text";
+
+        string response = "";
 
         var session = new Soup.Session ();
         var message = new Soup.Message ("GET", uri);
@@ -8,7 +10,15 @@ public class Core.Dict {
         headers.append ("Accept","application/json");
         headers.append ("app_id","db749a02");
         headers.append ("app_key","bf44ba104ce6d42d444db54fa878a52b");
-        return yield session.send_async (message);
+
+        session.queue_message (message, (sess, mess) => {
+            response = (string) mess.response_body.data;
+
+            Idle.add (get_entries.callback);
+        });
+
+        yield;
+        return response;
     }
 
     public async Core.Definition[] search_text (string word) {
@@ -16,7 +26,7 @@ public class Core.Dict {
 
         try {
             var parser = new Json.Parser();
-            parser.load_from_stream_async (yield get_entries (word), (GLib.Cancellable) null);
+            parser.load_from_data (yield get_entries (word));
 
             var root_object = parser.get_root().get_object ();
             var results = root_object.get_array_member("results");

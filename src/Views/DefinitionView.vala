@@ -78,8 +78,10 @@ public class Palaura.DefinitionView : Palaura.View {
                 buffer.insert_with_tags (ref iter, @"$(definitions[0])\n", -1, tag_sense_definition);
 
                 var examples = senses[i].get_examples ();
-                buffer.insert_with_tags (ref iter, @"◆  ", -1, tag_sense_explaining);
-                buffer.insert_with_tags (ref iter, @"$(examples[0].text)\n", -1, tag_sense_examples);
+                if(examples.length > 0) {
+                    buffer.insert_with_tags (ref iter, @"◆  ", -1, tag_sense_explaining);
+                    buffer.insert_with_tags (ref iter, @"$(examples[0].text)\n", -1, tag_sense_examples);
+                }
             }
         }
     }

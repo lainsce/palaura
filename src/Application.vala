@@ -9,7 +9,6 @@ public class Palaura.App : Granite.Application {
         application_id = "com.github.lainsce.palaura";
         program_name = "Palaura";
         app_launcher = "com.github.lainsce.palaura.desktop";
-        app_icon = "com.github.lainsce.palaura";
         exec_name = "com.github.lainsce.palaura";
 
         var quit_action = new SimpleAction ("quit", null);

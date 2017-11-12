@@ -47,7 +47,6 @@ executable(
     'src/Constants/AppSettings.vala',
     'src/Core/Definition.vala',
     'src/Core/DictCore.vala',
-    'src/Core/MyJsonReader.vala',
     'src/Views/View.vala',
     'src/Views/WordListView.vala',
     'src/Views/SearchView.vala',

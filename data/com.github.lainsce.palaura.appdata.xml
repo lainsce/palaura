@@ -23,6 +23,15 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="1.0.0" date="2017-11-17">
+        <description>
+          <p>Release: Hablas Español?</p>
+          <ul>
+            <li>Added preferences with option to search in the Spanish Dictionary</li>
+            <li>Small UI changes to look even more like a real dictionary</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.0.0" date="2017-11-12">
         <description>
           <p>Release: Faster Lookups</p>

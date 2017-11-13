@@ -1,4 +1,4 @@
-public class Core.Definition : Object {
+public class Palaura.Core.Definition : Object {
     public string text;
     public string lexical_category;
 

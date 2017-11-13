@@ -1,18 +1,16 @@
 @define-color colorPrimary #cb5353;
 @define-color textColorPrimaryShadow #a45350;
-@define-color colorSecondary #fbf9f1;
-@define-color textColorPrimary #fff;
-@define-color textColorSecondary #333333;
+@define-color textColorPrimary #f5f5f5;
 
 .palaura-window {
     background-color: @colorPrimary;
 }
 
 .palaura-view {
-    background-color: @colorSecondary;
+    background-color: #fbf9f1;
 }
 
 .palaura-view:selected {
-    background-color: @textColorSecondary;
+    background-color: #333333;
     color: @textColorPrimary;
 }

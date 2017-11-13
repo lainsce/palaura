@@ -15,8 +15,8 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
     public MainWindow(Gtk.Application app) {
         Object (application: app,
                 title: _("Palaura"),
-                height_request: 650,
-                width_request: 700);
+                height_request: 700,
+                width_request: 800);
 
         search_entry.search_changed.connect (trigger_search);
         search_entry.key_press_event.connect ((event) => {
@@ -57,11 +57,22 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         button_stack.add (return_button);
         button_stack.no_show_all = true;
 
+        var menu_button = new Gtk.Button ();
+        menu_button.has_tooltip = true;
+        menu_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        menu_button.tooltip_text = (_("Settings"));
+        menu_button.clicked.connect (() => {
+            debug ("Prefs button pressed.");
+            var preferences_dialog = new Widgets.Preferences (this);
+            preferences_dialog.show_all ();
+        });
+
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_title ("Palaura");
         headerbar.has_subtitle = false;
         headerbar.pack_start (button_stack);
+        headerbar.pack_end (menu_button);
         headerbar.pack_end (search_entry);
         set_titlebar (headerbar);
 

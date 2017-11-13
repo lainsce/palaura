@@ -1,4 +1,4 @@
-namespace Widgets {
+namespace Palaura.Widgets {
     public class WordListRow : Gtk.ListBoxRow {
 
         WordContainerGrid grid;

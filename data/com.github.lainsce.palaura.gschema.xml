@@ -10,5 +10,10 @@
 			<summary>Window position</summary>
 			<description>The y axis of window position</description>
 		</key>
+		<key name="dict-lang" type="s">
+			<default>'en'</default>
+			<summary>Dictionary language</summary>
+			<description>The language used to query words from its dictionary</description>
+		</key>
 	</schema>
 </schemalist>

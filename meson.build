@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.palaura', ['vala', 'c'],
-    version: '1.0.0'
+    version: '1.0.1'
 )
 
 # Import main lib files
@@ -53,6 +53,7 @@ executable(
     'src/Views/NormalView.vala',
     'src/Views/DefinitionView.vala',
     'src/Widgets/WordListRow.vala',
+    'src/Widgets/Preferences.vala',
     'src/Application.vala',
     'src/MainWindow.vala',
     asresources,

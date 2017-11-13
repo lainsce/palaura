@@ -1,6 +1,16 @@
-public class Core.Dict {
+public class Palaura.Core.Dict {
     public async string get_entries (string text) throws GLib.Error {
-        string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/en/$text";
+        var settings = AppSettings.get_default ();
+        string dict = "en";
+        settings.changed.connect (() => {
+            if (settings.dict_lang == "en") {
+                dict = "en";
+            } else if (settings.dict_lang == "es") {
+                dict = "es";
+            }
+        });
+
+        string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/$dict/$text";
 
         string response = "";
 

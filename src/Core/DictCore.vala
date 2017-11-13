@@ -1,7 +1,7 @@
 public class Palaura.Core.Dict {
     public async string get_entries (string text) throws GLib.Error {
         var settings = AppSettings.get_default ();
-        string dict = "en";
+        string dict = settings.dict_lang;
         settings.changed.connect (() => {
             if (settings.dict_lang == "en") {
                 dict = "en";

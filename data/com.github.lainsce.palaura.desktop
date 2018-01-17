@@ -7,4 +7,4 @@ Keywords=Words;Dictionary;Search;
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GTK;Utility;
+Categories=GTK;Utility;Dictionary;

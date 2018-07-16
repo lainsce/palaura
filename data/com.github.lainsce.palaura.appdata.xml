@@ -52,7 +52,15 @@
         </screenshot>
     </screenshots>
     <releases>
-      <release version="1.0.0" date="2017-11-17">
+        <release version="1.0.2" date="2018-07-16">
+        <description>
+          <p>Release: Hello Juno!</p>
+          <ul>
+            <li>Initial update for Juno</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.1" date="2017-11-17">
         <description>
           <p>Release: Hablas Español?</p>
           <ul>

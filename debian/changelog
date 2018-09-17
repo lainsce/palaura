@@ -1,0 +1,48 @@
+com.github.lainsce.palaura (1.0.2) xenial; urgency=low
+
+  * Juno initial release.
+
+ -- Lains <lainsce@airmail.cc>  Mon, 16 Jul 2018 15:12:00 -0300
+
+com.github.lainsce.palaura (1.0.1) xenial; urgency=low
+
+  * Added option to search in Spanish.
+  * Small UI changes.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 17 Nov 2017 19:56:00 -0300
+
+com.github.lainsce.palaura (1.0.0) xenial; urgency=low
+
+  * An API/Backend change..
+
+ -- Lains <lainsce@airmail.cc>  Sun, 12 Nov 2017 09:56:00 -0300
+
+com.github.lainsce.palaura (0.5.0) xenial; urgency=low
+
+  * This is the first stable now with all the fixes.
+
+ -- Lains <lainsce@airmail.cc>  Thu, 14 Sep 2017 17:53:00 -0300
+
+com.github.lainsce.palaura (0.4.0) xenial; urgency=low
+
+  * It's Palaura not Paraula.
+
+ -- Lains <lainsce@airmail.cc>  Thu, 14 Sep 2017 16:03:00 -0300
+
+com.github.lainsce.palaura (0.3.0) xenial; urgency=low
+
+  * AppCenter fixes (yet again).
+
+ -- Lains <lainsce@airmail.cc>  Thu, 14 Sep 2017 11:02:00 -0300
+
+com.github.lainsce.palaura (0.2.0) xenial; urgency=low
+
+  * AppCenter fixes.
+
+ -- Lains <lainsce@airmail.cc>  Thu, 14 Sep 2017 10:58:00 -0300
+
+com.github.lainsce.palaura (0.1.0) xenial; urgency=low
+
+  * First stable release.
+
+ -- Lains <lainsce@airmail.cc>  Thu, 14 Sep 2017 03:43:00 -0300

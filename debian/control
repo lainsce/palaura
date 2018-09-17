@@ -1,0 +1,17 @@
+Source: com.github.lainsce.palaura
+Section: x11
+Priority: extra
+Maintainer: Lains <lainsce@airmail.cc>
+Build-Depends: meson,
+               debhelper (>= 9),
+               valac (>= 0.26),
+               libgtk-3-dev,
+               libgranite-dev,
+               libsoup2.4-dev,
+               libjson-glib-dev
+Standards-Version: 3.9.3
+
+Package: com.github.lainsce.palaura
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Find any word's definition with this handy dictionary

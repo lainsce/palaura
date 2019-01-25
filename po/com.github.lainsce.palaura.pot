@@ -17,10 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: data/com.github.lainsce.palaura.appdata.xml:6
+#: data/com.github.lainsce.palaura.desktop:2
 #: src/Application.vala:10
 #: src/MainWindow.vala:17
 #: src/MainWindow.vala:72
 msgid "Palaura"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml:7
+msgid "Find any word's definition with this handy dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml:9
+msgid "Find any word's definition, and details about it, with this handy dictionary by your side"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml:11
+msgid "Quit anytime with the shortcut Ctrl + Q"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.desktop:3
+msgid "Find any word definition with this handy dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.desktop:6
+msgid "Words;Dictionary;Search;"
 msgstr ""
 
 #: src/MainWindow.vala:52

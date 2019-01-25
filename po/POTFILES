@@ -1,4 +1,3 @@
-src/Constants/Stylesheet.vala
 src/Core/Definition.vala
 src/Core/DictCore.vala
 src/Views/View.vala

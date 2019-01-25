@@ -37,6 +37,10 @@ msgstr ""
 msgid "Quit anytime with the shortcut Ctrl + Q"
 msgstr ""
 
+#: data/com.github.lainsce.palaura.appdata.xml:12
+msgid "Available in English and Spanish"
+msgstr ""
+
 #: data/com.github.lainsce.palaura.desktop:3
 msgid "Find any word definition with this handy dictionary"
 msgstr ""

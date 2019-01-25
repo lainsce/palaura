@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Palaura
-Comment=Find any word\'s definition with this handy dictionary
+Comment=Find any word definition with this handy dictionary
 Exec=com.github.lainsce.palaura
 Icon=com.github.lainsce.palaura
 Keywords=Words;Dictionary;Search;

@@ -37,6 +37,10 @@ msgstr "Trouvez la définition de n'importe quel mot, et des détails à son suj
 msgid "Quit anytime with the shortcut Ctrl + Q"
 msgstr "Quittez à tout moment avec le raccourci Ctrl + Q"
 
+#: data/com.github.lainsce.palaura.appdata.xml:12
+msgid "Available in English and Spanish"
+msgstr "Disponible en Anglais et en Espagnol"
+
 #: data/com.github.lainsce.palaura.desktop:3
 msgid "Find any word definition with this handy dictionary"
 msgstr "Trouvez n'importe quelle définition de mot avec ce dictionnaire pratique"

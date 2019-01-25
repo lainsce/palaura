@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE com.github.lainsce.palaura'S COPYRIGHT HOLDER
+# French translations for com.github.lainsce.palaura package.
+# Copyright (C) 2019 THE com.github.lainsce.palaura'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.lainsce.palaura package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# NathanBnm, 2019.
 #
 #, fuzzy
 msgid ""
@@ -9,12 +9,12 @@ msgstr ""
 "Project-Id-Version: com.github.lainsce.palaura\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-07 02:27-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-01-25 17:48+0100\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.lainsce.palaura.appdata.xml:6
@@ -23,86 +23,86 @@ msgstr ""
 #: src/MainWindow.vala:17
 #: src/MainWindow.vala:72
 msgid "Palaura"
-msgstr ""
+msgstr "Palaura"
 
 #: data/com.github.lainsce.palaura.appdata.xml:7
 msgid "Find any word's definition with this handy dictionary"
-msgstr ""
+msgstr "Trouvez la définition de n'importe quel mot avec ce dictionnaire pratique"
 
 #: data/com.github.lainsce.palaura.appdata.xml:9
 msgid "Find any word's definition, and details about it, with this handy dictionary by your side"
-msgstr ""
+msgstr "Trouvez la définition de n'importe quel mot, et des détails à son sujet, avec ce dictionnaire pratique à vos côtés"
 
 #: data/com.github.lainsce.palaura.appdata.xml:11
 msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr ""
+msgstr "Quittez à tout moment avec le raccourci Ctrl + Q"
 
 #: data/com.github.lainsce.palaura.appdata.xml:12
 msgid "Available in English and Spanish"
-msgstr ""
+msgstr "Disponible en Anglais et en Espagnol"
 
 #: data/com.github.lainsce.palaura.desktop:3
 msgid "Find any word definition with this handy dictionary"
-msgstr ""
+msgstr "Trouvez n'importe quelle définition de mot avec ce dictionnaire pratique"
 
 #: data/com.github.lainsce.palaura.desktop:6
 msgid "Words;Dictionary;Search;"
-msgstr ""
+msgstr "Mots;Dictionnaire;Recherche;"
 
 #: src/MainWindow.vala:52
 msgid "Search words"
-msgstr ""
+msgstr "Rechercher des mots"
 
 #: src/MainWindow.vala:55
 #: src/MainWindow.vala:141
 #: src/Views/NormalView.vala:14
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: src/MainWindow.vala:63
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: src/Views/DefinitionView.vala:104
 msgid "Definition"
-msgstr ""
+msgstr "Définition"
 
 #: src/Views/NormalView.vala:6
 msgid "Search a Word"
-msgstr ""
+msgstr "Chercher un mot"
 
 #: src/Views/NormalView.vala:7
 msgid "Use the searchbar to find the word you're looking for."
-msgstr ""
+msgstr "Utilisez la barre de recherche pour trouver le mot que vous cherchez."
 
 #: src/Views/SearchView.vala:41
 msgid "Finding your word, please wait…"
-msgstr ""
+msgstr "Recherhe de votre mot, veuillez patienter…"
 
 #: src/Views/SearchView.vala:53
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: src/Views/WordListView.vala:10
 msgid "No words found"
-msgstr ""
+msgstr "Aucun mot trouvé"
 
 #: src/Views/WordListView.vala:10
 msgid "Try fixing your search term."
-msgstr ""
+msgstr "Essayez de corriger vos termes de recherche."
 
 #: src/Widgets/Preferences.vala:38
 msgid "Dictionary Preferences"
-msgstr ""
+msgstr "Préférence de dictionnaire"
 
 #: src/Widgets/Preferences.vala:39
 msgid "Lookup language:"
-msgstr ""
+msgstr "Langue de recherche"
 
 #: src/Widgets/Preferences.vala:41
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
 #: src/Widgets/Preferences.vala:42
 msgid "Spanish"
-msgstr ""
+msgstr "Espagnol"

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) YEAR THE com.github.lainsce.palaura'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.lainsce.palaura package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -17,10 +17,66 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.vala:38
+#: src/Application.vala:10
+#: src/MainWindow.vala:17
+#: src/MainWindow.vala:72
 msgid "Palaura"
 msgstr ""
 
-#: src/MainWindow.vala:124
-msgid ""
+#: src/MainWindow.vala:52
+msgid "Search words"
+msgstr ""
+
+#: src/MainWindow.vala:55
+#: src/MainWindow.vala:141
+#: src/Views/NormalView.vala:14
+msgid "Home"
+msgstr ""
+
+#: src/MainWindow.vala:63
+msgid "Settings"
+msgstr ""
+
+#: src/Views/DefinitionView.vala:104
+msgid "Definition"
+msgstr ""
+
+#: src/Views/NormalView.vala:6
+msgid "Search a Word"
+msgstr ""
+
+#: src/Views/NormalView.vala:7
+msgid "Use the searchbar to find the word you're looking for."
+msgstr ""
+
+#: src/Views/SearchView.vala:41
+msgid "Finding your word, please wait..."
+msgstr ""
+
+#: src/Views/SearchView.vala:53
+msgid "Search"
+msgstr ""
+
+#: src/Views/WordListView.vala:10
+msgid "No words found"
+msgstr ""
+
+#: src/Views/WordListView.vala:10
+msgid "Try fixing your search term."
+msgstr ""
+
+#: src/Widgets/Preferences.vala:38
+msgid "Dictionary Preferences"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:39
+msgid "Lookup language:"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:41
+msgid "English"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:42
+msgid "Spanish"
 msgstr ""

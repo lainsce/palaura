@@ -72,7 +72,7 @@ msgid "Use the searchbar to find the word you're looking for."
 msgstr ""
 
 #: src/Views/SearchView.vala:41
-msgid "Finding your word, please wait..."
+msgid "Finding your word, please wait…"
 msgstr ""
 
 #: src/Views/SearchView.vala:53

@@ -53,6 +53,14 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="1.0.3" date="2019-03-15">
+        <description>
+          <p>Release: Minimal et al</p>
+          <ul>
+            <li>French translation and some fixes.</li>
+          </ul>
+        </description>
+      </release>
         <release version="1.0.2" date="2018-07-16">
         <description>
           <p>Release: Hello Juno!</p>

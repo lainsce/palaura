@@ -7,7 +7,7 @@ namespace Palaura {
 
         construct
         {
-            alert_view = new Granite.Widgets.AlertView("No words found", "Try fixing your search term.", "dialog-information-symbolic");
+            alert_view = new Granite.Widgets.AlertView(_("No words found"), _("Try fixing your search term."), "dialog-information-symbolic");
             alert_view.get_style_context ().add_class ("palaura-view");
             alert_view.show_all();
 

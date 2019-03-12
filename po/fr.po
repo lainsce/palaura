@@ -51,7 +51,7 @@ msgstr "Mots;Dictionnaire;Recherche;"
 
 #: src/MainWindow.vala:52
 msgid "Search words"
-msgstr "Rechercher des mots"
+msgstr "Recherchez des mots"
 
 #: src/MainWindow.vala:55
 #: src/MainWindow.vala:141
@@ -89,15 +89,19 @@ msgstr "Aucun mot trouvé"
 
 #: src/Views/WordListView.vala:10
 msgid "Try fixing your search term."
-msgstr "Essayez de corriger vos termes de recherche."
+msgstr "Essayez de modifier votre recherche."
+
+#: src/Widgets/Preferences.vala:28
+msgid "Preferences"
+msgstr "Préférences"
 
 #: src/Widgets/Preferences.vala:38
 msgid "Dictionary Preferences"
-msgstr "Préférence de dictionnaire"
+msgstr "Préférences de dictionnaire"
 
 #: src/Widgets/Preferences.vala:39
 msgid "Lookup language:"
-msgstr "Langue de recherche"
+msgstr "Langue de recherche :"
 
 #: src/Widgets/Preferences.vala:41
 msgid "English"

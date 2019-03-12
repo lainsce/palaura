@@ -7,7 +7,7 @@ public class Palaura.App : Granite.Application {
     construct
     {
         application_id = "com.github.lainsce.palaura";
-        program_name = "Palaura";
+        program_name = _("Palaura");
         app_launcher = "com.github.lainsce.palaura.desktop";
         exec_name = "com.github.lainsce.palaura";
 

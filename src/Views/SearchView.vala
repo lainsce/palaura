@@ -38,7 +38,7 @@ public class Palaura.SearchView : Palaura.View {
         spinner.set_size_request (32, 32);
         spinner_container.pack_start (spinner);
 
-        label_loading_info = new Gtk.Label ("Finding your word, please wait…");
+        label_loading_info = new Gtk.Label _("Finding your word, please wait…");
         spinner_container.pack_start (label_loading_info);
 
 
@@ -50,7 +50,7 @@ public class Palaura.SearchView : Palaura.View {
     }
 
     public override string get_header_name () {
-        return "Search";
+        return _("Search");
     }
 
     public void search (string word, bool append = false) {

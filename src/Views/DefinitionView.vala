@@ -101,6 +101,6 @@ public class Palaura.DefinitionView : Palaura.View {
     }
 
     public override string get_header_name () {
-        return "Definition";
+        return _("Definition");
     }
 }

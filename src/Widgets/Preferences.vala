@@ -35,11 +35,11 @@ namespace Palaura.Widgets {
         construct {
             var settings = AppSettings.get_default ();
 
-            var header = new Granite.HeaderLabel _("Dictionary Preferences");
-            var label = new SettingsLabel _("Lookup language:");
+            var header = new Granite.HeaderLabel (_("Dictionary Preferences"));
+            var label = new SettingsLabel (_("Lookup language:"));
             var lang = new Granite.Widgets.ModeButton ();
-            lang.append_text _("English");
-            lang.append_text _("Spanish");
+            lang.append_text (_("English"));
+            lang.append_text (_("Spanish"));
 
             var dict_lang = settings.dict_lang;
 

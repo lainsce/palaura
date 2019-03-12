@@ -91,6 +91,10 @@ msgstr ""
 msgid "Try fixing your search term."
 msgstr ""
 
+#: src/Widgets/Preferences.vala:28
+msgid "Preferences"
+msgstr ""
+
 #: src/Widgets/Preferences.vala:38
 msgid "Dictionary Preferences"
 msgstr ""

@@ -49,10 +49,10 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         context.add_class ("palaura-window");
 
         search_entry = new Gtk.SearchEntry ();
-        search_entry.placeholder_text = "Search words";
+        search_entry.placeholder_text = _("Search words");
 
         button_stack = new Gtk.Stack ();
-        return_button = new Gtk.Button.with_label ("Home");
+        return_button = new Gtk.Button.with_label _("Home");
         return_button.get_style_context ().add_class ("back-button");
         button_stack.add (return_button);
         button_stack.no_show_all = true;
@@ -60,7 +60,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         var menu_button = new Gtk.Button ();
         menu_button.has_tooltip = true;
         menu_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        menu_button.tooltip_text = (_("Settings"));
+        menu_button.tooltip_text = _("Settings");
         menu_button.clicked.connect (() => {
             debug ("Prefs button pressed.");
             var preferences_dialog = new Widgets.Preferences (this);
@@ -69,7 +69,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
 
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
-        headerbar.set_title ("Palaura");
+        headerbar.set_title _("Palaura");
         headerbar.has_subtitle = false;
         headerbar.pack_start (button_stack);
         headerbar.pack_end (menu_button);
@@ -138,7 +138,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
             }
         }
         else {
-            return_button.label = "Home";
+            return_button.label = _("Home");
             button_stack.hide();
         }
     }

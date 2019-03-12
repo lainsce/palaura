@@ -51,7 +51,7 @@ msgstr "Mots;Dictionnaire;Recherche;"
 
 #: src/MainWindow.vala:52
 msgid "Search words"
-msgstr "Recherchez des mots"
+msgstr "Chercher un mot"
 
 #: src/MainWindow.vala:55
 #: src/MainWindow.vala:141
@@ -69,7 +69,7 @@ msgstr "Définition"
 
 #: src/Views/NormalView.vala:6
 msgid "Search a Word"
-msgstr "Chercher un mot"
+msgstr "Recherchez un mot"
 
 #: src/Views/NormalView.vala:7
 msgid "Use the searchbar to find the word you're looking for."

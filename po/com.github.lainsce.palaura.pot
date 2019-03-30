@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE com.github.lainsce.palaura'S COPYRIGHT HOLDER
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.lainsce.palaura package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,71 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.palaura\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-07 02:27-0300\n"
+"POT-Creation-Date: 2019-03-30 17:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.lainsce.palaura.appdata.xml:6
-#: data/com.github.lainsce.palaura.desktop:2
-#: src/Application.vala:10
-#: src/MainWindow.vala:17
-#: src/MainWindow.vala:72
-msgid "Palaura"
+#: src/Views/WordListView.vala:10
+msgid "No words found"
 msgstr ""
 
-#: data/com.github.lainsce.palaura.appdata.xml:7
-msgid "Find any word's definition with this handy dictionary"
-msgstr ""
-
-#: data/com.github.lainsce.palaura.appdata.xml:9
-msgid "Find any word's definition, and details about it, with this handy dictionary by your side"
-msgstr ""
-
-#: data/com.github.lainsce.palaura.appdata.xml:11
-msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr ""
-
-#: data/com.github.lainsce.palaura.appdata.xml:12
-msgid "Available in English and Spanish"
-msgstr ""
-
-#: data/com.github.lainsce.palaura.desktop:3
-msgid "Find any word definition with this handy dictionary"
-msgstr ""
-
-#: data/com.github.lainsce.palaura.desktop:6
-msgid "Words;Dictionary;Search;"
-msgstr ""
-
-#: src/MainWindow.vala:52
-msgid "Search words"
-msgstr ""
-
-#: src/MainWindow.vala:55
-#: src/MainWindow.vala:141
-#: src/Views/NormalView.vala:14
-msgid "Home"
-msgstr ""
-
-#: src/MainWindow.vala:63
-msgid "Settings"
-msgstr ""
-
-#: src/Views/DefinitionView.vala:104
-msgid "Definition"
-msgstr ""
-
-#: src/Views/NormalView.vala:6
-msgid "Search a Word"
-msgstr ""
-
-#: src/Views/NormalView.vala:7
-msgid "Use the searchbar to find the word you're looking for."
+#: src/Views/WordListView.vala:10
+msgid "Try fixing your search term."
 msgstr ""
 
 #: src/Views/SearchView.vala:41
@@ -83,12 +33,20 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/Views/WordListView.vala:10
-msgid "No words found"
+#: src/Views/NormalView.vala:6
+msgid "Search a Word"
 msgstr ""
 
-#: src/Views/WordListView.vala:10
-msgid "Try fixing your search term."
+#: src/Views/NormalView.vala:7
+msgid "Use the searchbar to find the word you're looking for."
+msgstr ""
+
+#: src/Views/NormalView.vala:14 src/MainWindow.vala:55 src/MainWindow.vala:141
+msgid "Home"
+msgstr ""
+
+#: src/Views/DefinitionView.vala:104
+msgid "Definition"
 msgstr ""
 
 #: src/Widgets/Preferences.vala:28
@@ -109,4 +67,20 @@ msgstr ""
 
 #: src/Widgets/Preferences.vala:42
 msgid "Spanish"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:88
+msgid "Close"
+msgstr ""
+
+#: src/Application.vala:10 src/MainWindow.vala:17 src/MainWindow.vala:72
+msgid "Palaura"
+msgstr ""
+
+#: src/MainWindow.vala:52
+msgid "Search words"
+msgstr ""
+
+#: src/MainWindow.vala:63
+msgid "Settings"
 msgstr ""

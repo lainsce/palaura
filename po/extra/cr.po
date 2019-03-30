@@ -1,0 +1,109 @@
+# Cree translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-30 17:47+0100\n"
+"PO-Revision-Date: 2019-03-30 17:37+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.lainsce.palaura.desktop.in:3
+#: data/com.github.lainsce.palaura.appdata.xml.in:6
+msgid "Palaura"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.desktop.in:4
+msgid "Find any word definition with this handy dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.desktop.in:6
+msgid "com.github.lainsce.palaura"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.desktop.in:7
+msgid "Words;Dictionary;Search;"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:7
+msgid "Find any word's definition with this handy dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:9
+msgid ""
+"Find any word's definition, and details about it, with this handy dictionary "
+"by your side"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:11
+msgid "Quit anytime with the shortcut Ctrl + Q"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:12
+msgid "Available in English and Spanish"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:18
+msgid "Lains"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:58
+msgid "Release: Minimal et al"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:60
+msgid "French translation and some fixes."
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:66
+msgid "Release: Hello Juno!"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:68
+msgid "Initial update for Juno"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:74
+msgid "Release: Hablas Español?"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:76
+msgid "Added preferences with option to search in the Spanish Dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:77
+msgid "Small UI changes to look even more like a real dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:83
+msgid "Release: Faster Lookups"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:85
+msgid "Port to Oxford API for the Dictionary"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:91
+msgid "Release: Appcenter Fixes Yet Again"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:93
+#: data/com.github.lainsce.palaura.appdata.xml.in:102
+msgid "Some AppCenter fixes"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:99
+msgid "Release: Appcenter Fixes"
+msgstr ""
+
+#: data/com.github.lainsce.palaura.appdata.xml.in:101
+msgid "First Stable release"
+msgstr ""

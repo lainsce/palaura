@@ -38,7 +38,7 @@ public class Palaura.SearchView : Palaura.View {
         spinner.set_size_request (32, 32);
         spinner_container.pack_start (spinner);
 
-        label_loading_info = new Gtk.Label _("Finding your word, please wait…");
+        label_loading_info = new Gtk.Label (_("Finding your word, please wait…"));
         spinner_container.pack_start (label_loading_info);
 
 

@@ -8,5 +8,3 @@ src/Views/DefinitionView.vala
 src/Widgets/WordListRow.vala
 src/Application.vala
 src/MainWindow.vala
-data/com.github.lainsce.palaura.appdata.xml
-data/com.github.lainsce.palaura.desktop

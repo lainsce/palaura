@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.palaura\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 17:37+0100\n"
+"POT-Creation-Date: 2019-03-30 17:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,30 @@ msgstr ""
 
 #: src/Views/DefinitionView.vala:104
 msgid "Definition"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:28
+msgid "Preferences"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:38
+msgid "Dictionary Preferences"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:39
+msgid "Lookup language:"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:41
+msgid "English"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:42
+msgid "Spanish"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:88
+msgid "Close"
 msgstr ""
 
 #: src/Application.vala:10 src/MainWindow.vala:17 src/MainWindow.vala:72

@@ -1,15 +1,15 @@
 # Dutch translations for extra package.
 # Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2019.
+# Heimen Stoffels, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 17:37+0100\n"
+"POT-Creation-Date: 2019-03-30 17:47+0100\n"
 "PO-Revision-Date: 2019-03-30 17:37+0100\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -20,41 +20,42 @@ msgstr ""
 #: data/com.github.lainsce.palaura.desktop.in:3
 #: data/com.github.lainsce.palaura.appdata.xml.in:6
 msgid "Palaura"
-msgstr ""
+msgstr "Palaura"
 
 #: data/com.github.lainsce.palaura.desktop.in:4
 msgid "Find any word definition with this handy dictionary"
-msgstr ""
+msgstr "Vind de definitie van elk woord met dit handige woordenboek"
 
 #: data/com.github.lainsce.palaura.desktop.in:6
 msgid "com.github.lainsce.palaura"
-msgstr ""
+msgstr "com.github.lainsce.palaura"
 
 #: data/com.github.lainsce.palaura.desktop.in:7
 msgid "Words;Dictionary;Search;"
-msgstr ""
+msgstr "Woorden;Woordenboek;Zoeken;"
 
 #: data/com.github.lainsce.palaura.appdata.xml.in:7
 msgid "Find any word's definition with this handy dictionary"
-msgstr ""
+msgstr "Vind de definitie van elk woord met dit handige woordenboek"
 
 #: data/com.github.lainsce.palaura.appdata.xml.in:9
 msgid ""
 "Find any word's definition, and details about it, with this handy dictionary "
 "by your side"
 msgstr ""
+"Vind de uitgebreide definitie van elk woord met dit handige woordenboek"
 
 #: data/com.github.lainsce.palaura.appdata.xml.in:11
 msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr ""
+msgstr "Sluit de app af met Ctrl + Q"
 
 #: data/com.github.lainsce.palaura.appdata.xml.in:12
 msgid "Available in English and Spanish"
-msgstr ""
+msgstr "Beschikbaar in het Engels en Spaans"
 
 #: data/com.github.lainsce.palaura.appdata.xml.in:18
 msgid "Lains"
-msgstr ""
+msgstr "Lains"
 
 #: data/com.github.lainsce.palaura.appdata.xml.in:58
 msgid "Release: Minimal et al"

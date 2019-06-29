@@ -53,7 +53,18 @@
         </screenshot>
     </screenshots>
     <releases>
-        <release version="1.0.3" date="2019-03-15">
+      <release version="1.0.4" date="2019-06-30">
+        <description>
+          <p>Release: Temporary Pause</p>
+          <ul>
+            <li>This is an update to Palaura for a notice:
+There will be an API change in the next one, as such, it is advised to use other dictionary apps
+while I update the app to a better, offline API. The app will have a (hopefully) small blackout and
+is free of price while I do this.</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.3" date="2019-03-15">
         <description>
           <p>Release: Minimal et al</p>
           <ul>

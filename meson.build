@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.palaura', ['vala', 'c'],
-    version: '1.0.2'
+    version: '1.0.8'
 )
 
 # Import main lib files
@@ -79,4 +79,4 @@ meson.add_install_script('meson/post_install.py')
 
 # Add subfolders for Meson to look
 subdir('data')
-subdir('po')
+# subdir('po')

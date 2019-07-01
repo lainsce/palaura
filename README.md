@@ -1,3 +1,5 @@
+# Temporary Blackout on App!
+
 # ![icon](data/icon.png) Palaura
 
 ## Find any word's definition with this handy dictionary
@@ -36,7 +38,3 @@ meson build && cd build
 meson configure -Dprefix=/usr
 sudo ninja install
 ```
-
-## Miscellanea
-
-Uses the Oxford API for definitions and lookups.

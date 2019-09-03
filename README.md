@@ -1,4 +1,4 @@
-# Temporary Blackout on App!
+# Permanent Blackout on App!
 
 # ![icon](data/icon.png) Palaura
 

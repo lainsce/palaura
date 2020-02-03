@@ -8,6 +8,11 @@
 
 .palaura-view {
     background-color: #FDF6E3;
+    color: #586E75;
+}
+
+.palaura-view image {
+    color: #586E75;
 }
 
 .palaura-view:selected {

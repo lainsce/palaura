@@ -35,24 +35,24 @@ namespace Palaura.Widgets {
         construct {
             var header = new Granite.HeaderLabel (_("Dictionary Preferences"));
             var label = new SettingsLabel (_("Lookup language:"));
-            var lang = new Granite.Widgets.ModeButton ();
+            var lang = new Gtk.ComboBoxText ();
             lang.append_text (_("English"));
             lang.append_text (_("Spanish"));
             var dict_lang = Palaura.Application.gsettings.get_string("dict-lang");
 
             switch (dict_lang) {
                 case "en":
-                    lang.selected = 0;
+                    lang.active = 0;
                     break;
                 case "es":
-                    lang.selected = 1;
+                    lang.active = 1;
                     break;
                 default:
-                    lang.selected = 0;
+                    lang.active = 0;
                     break;
             }
-            lang.mode_changed.connect (() => {
-                switch (lang.selected) {
+            lang.changed.connect (() => {
+                switch (lang.active) {
                     case 0:
                         Palaura.Application.gsettings.set_string("dict-lang", "en");
                         break;
@@ -64,11 +64,14 @@ namespace Palaura.Widgets {
 
             var main_grid = new Gtk.Grid ();
             main_grid.margin_top = 0;
+            main_grid.margin = 6;
             main_grid.column_spacing = 12;
             main_grid.column_homogeneous = true;
             main_grid.attach (header, 0, 1, 1, 1);
             main_grid.attach (label, 0, 2, 1, 1);
             main_grid.attach (lang, 1, 2, 1, 1);
+
+            ((Gtk.Container) get_content_area ()).add (main_grid);
 
             var close_button = this.add_button (_("Close"), Gtk.ResponseType.CLOSE);
             ((Gtk.Button) close_button).clicked.connect (() => destroy ());

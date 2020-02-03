@@ -1,16 +1,16 @@
 public class Palaura.Core.Dict {
     public async string get_entries (string text) throws GLib.Error {
-        var settings = AppSettings.get_default ();
-        string dict = settings.dict_lang;
-        settings.changed.connect (() => {
-            if (settings.dict_lang == "en") {
-                dict = "en";
-            } else if (settings.dict_lang == "es") {
+        string dict = Palaura.Application.gsettings.get_string("dict-lang");
+        Palaura.Application.gsettings.changed.connect (() => {
+            if (Palaura.Application.gsettings.get_string("dict-lang") == "en-us") {
+                dict = "en-us";
+            } else if (Palaura.Application.gsettings.get_string("dict-lang") == "es") {
                 dict = "es";
             }
         });
 
-        string uri = @"https://od-api.oxforddictionaries.com:443/api/v1/entries/$dict/$text";
+        string low_text = text.down ();
+        string uri = @"https://od-api.oxforddictionaries.com/api/v2/entries/$dict/$low_text?strictMatch=false";
 
         string response = "";
 
@@ -19,7 +19,7 @@ public class Palaura.Core.Dict {
         Soup.MessageHeaders headers = message.request_headers;
         headers.append ("Accept","application/json");
         headers.append ("app_id","db749a02");
-        headers.append ("app_key","bf44ba104ce6d42d444db54fa878a52b");
+        headers.append ("app_key","080738b4b5778a35498f2036c126c9e2");
 
         session.queue_message (message, (sess, mess) => {
             response = (string) mess.response_body.data;

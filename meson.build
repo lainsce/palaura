@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.palaura', ['vala', 'c'],
-    version: '1.0.7'
+    version: '1.2.0'
 )
 
 # Import main lib files
@@ -44,7 +44,6 @@ cc = meson.get_compiler('c')
 # Let's define our executable
 executable(
     meson.project_name(),
-    'src/Constants/AppSettings.vala',
     'src/Core/Definition.vala',
     'src/Core/DictCore.vala',
     'src/Views/View.vala',
@@ -53,6 +52,7 @@ executable(
     'src/Views/NormalView.vala',
     'src/Views/DefinitionView.vala',
     'src/Widgets/WordListRow.vala',
+    'src/Widgets/WordContainerGrid.vala',
     'src/Widgets/Preferences.vala',
     'src/Application.vala',
     'src/MainWindow.vala',
@@ -61,6 +61,7 @@ executable(
     dependencies: [
         dependency('granite'),
         dependency('gobject-2.0'),
+        dependency('gtksourceview-3.0'),
         dependency('gtk+-3.0'),
         dependency('libsoup-2.4'),
         dependency('json-glib-1.0'),

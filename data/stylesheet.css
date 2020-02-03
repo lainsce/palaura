@@ -7,10 +7,10 @@
 }
 
 .palaura-view {
-    background-color: #fbf9f1;
+    background-color: #FDF6E3;
 }
 
 .palaura-view:selected {
-    background-color: #333333;
+    background-color: #586E75;
     color: @textColorPrimary;
 }

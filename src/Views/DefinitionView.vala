@@ -1,8 +1,8 @@
 public class Palaura.DefinitionView : Palaura.View {
 
     Gtk.ScrolledWindow scrolled_window;
-    Gtk.TextView text_view;
-    Gtk.TextBuffer buffer;
+    Gtk.SourceView text_view;
+    Gtk.SourceBuffer buffer;
     Gtk.TextTag tag_word;
     Gtk.TextTag tag_pronunciation;
     Gtk.TextTag tag_lexical_category;
@@ -18,19 +18,22 @@ public class Palaura.DefinitionView : Palaura.View {
 
     construct {
         scrolled_window = new Gtk.ScrolledWindow (null, null);
-        scrolled_window.set_policy (Gtk.PolicyType.NEVER,
-            Gtk.PolicyType.AUTOMATIC);
+        scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         scrolled_window.set_border_width (12);
+        scrolled_window.get_style_context ().add_class ("palaura-view");
         add (scrolled_window);
 
-        text_view = new Gtk.TextView ();
-        text_view.get_style_context ().add_class ("palaura-view");
+        text_view = new Gtk.SourceView ();
         text_view.set_wrap_mode (Gtk.WrapMode.WORD_CHAR);
         text_view.set_editable (false);
         text_view.set_cursor_visible (false);
+        buffer = new Gtk.SourceBuffer (null);
+        text_view.buffer = buffer;
+        var style_manager = Gtk.SourceStyleSchemeManager.get_default ();
+        var style = style_manager.get_scheme ("solarized-light");
+        buffer.set_style_scheme (style);
         scrolled_window.add (text_view);
 
-        buffer = text_view.get_buffer ();
         tag_word = buffer.create_tag (null, "weight", Pango.Weight.BOLD, "font", "serif 18");
         tag_pronunciation = buffer.create_tag (null, "font", "serif 12");
         tag_lexical_category = buffer.create_tag (null, "font", "serif 12", "pixels-above-lines", 8, "pixels-inside-wrap", 8);

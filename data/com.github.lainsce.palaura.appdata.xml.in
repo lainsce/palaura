@@ -53,6 +53,16 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="1.2.0" date="2020-02-07">
+        <description>
+          <p>Release: Hot Revival</p>
+          <ul>
+            <li>Update: In the lack of a better API that is free of charge, I decided to continue using the one in-app.
+As such, the new pricing will help accomodate the costs.</li>
+            <li>Minor fixes.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.0.4" date="2019-06-30">
         <description>
           <p>Release: Temporary Pause</p>
@@ -118,6 +128,6 @@ is free of price while I do this.</li>
     <custom>
         <value key="x-appcenter-color-primary">#ddbdbd</value>
         <value key="x-appcenter-color-primary-text">#333333</value>
-        <value key="x-appcenter-suggested-price">5</value>
+        <value key="x-appcenter-suggested-price">8</value>
     </custom>
 </component>

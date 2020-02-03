@@ -1,5 +1,3 @@
-# Permanent Blackout on App!
-
 # ![icon](data/icon.png) Palaura
 
 ## Find any word's definition with this handy dictionary
@@ -24,6 +22,7 @@ Please make sure you have these dependencies first before building.
 ```bash
 granite
 gtk+-3.0
+gtksourceview-3.0
 meson
 libsoup2.4
 libjson-glib

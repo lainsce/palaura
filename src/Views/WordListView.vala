@@ -27,7 +27,7 @@ namespace Palaura {
             list_box.activate_on_single_click = true;
             list_box.row_activated.connect ((r) => {
                     var row = (Widgets.WordListRow) r;
-                    show_definition(row.get_definition ());
+                    show_definition (row.get_definition ());
                 });
             add(list_box);
         }

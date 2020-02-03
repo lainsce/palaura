@@ -22,7 +22,7 @@ namespace Palaura.Widgets {
 
         public Preferences (Gtk.Window? parent) {
             Object (
-                border_width: 0,
+                border_width: 6,
                 deletable: false,
                 resizable: false,
                 title: _("Preferences"),
@@ -33,15 +33,12 @@ namespace Palaura.Widgets {
         }
 
         construct {
-            var settings = AppSettings.get_default ();
-
             var header = new Granite.HeaderLabel (_("Dictionary Preferences"));
             var label = new SettingsLabel (_("Lookup language:"));
             var lang = new Granite.Widgets.ModeButton ();
             lang.append_text (_("English"));
             lang.append_text (_("Spanish"));
-
-            var dict_lang = settings.dict_lang;
+            var dict_lang = Palaura.Application.gsettings.get_string("dict-lang");
 
             switch (dict_lang) {
                 case "en":
@@ -54,14 +51,13 @@ namespace Palaura.Widgets {
                     lang.selected = 0;
                     break;
             }
-
             lang.mode_changed.connect (() => {
                 switch (lang.selected) {
                     case 0:
-                        settings.dict_lang = "en";
+                        Palaura.Application.gsettings.set_string("dict-lang", "en");
                         break;
                     case 1:
-                        settings.dict_lang = "es";
+                        Palaura.Application.gsettings.set_string("dict-lang", "es");
                         break;
                 }
             });
@@ -74,17 +70,6 @@ namespace Palaura.Widgets {
             main_grid.attach (label, 0, 2, 1, 1);
             main_grid.attach (lang, 1, 2, 1, 1);
 
-            get_action_area ().margin = 6;
-
-            var content = this.get_content_area () as Gtk.Box;
-            content.margin = 6;
-            content.margin_top = 0;
-            content.add (main_grid);
-
-            var action_area = this.get_action_area () as Gtk.Box;
-            action_area.margin = 0;
-            action_area.margin_top = 6;
-
             var close_button = this.add_button (_("Close"), Gtk.ResponseType.CLOSE);
             ((Gtk.Button) close_button).clicked.connect (() => destroy ());
         }
@@ -94,14 +79,6 @@ namespace Palaura.Widgets {
                 label = text;
                 halign = Gtk.Align.END;
                 margin_start = 12;
-            }
-        }
-
-        private class SettingsSwitch : Gtk.Switch {
-            public SettingsSwitch (string setting) {
-                var main_settings = AppSettings.get_default ();
-                halign = Gtk.Align.START;
-                main_settings.schema.bind (setting, this, "active", SettingsBindFlags.DEFAULT);
             }
         }
     }

@@ -1,24 +1,18 @@
 using Granite.Widgets;
 
-public class Palaura.App : Granite.Application {
-
+public class Palaura.Application : Granite.Application {
+    public static GLib.Settings gsettings;
     public Palaura.MainWindow main_window;
 
-    construct
-    {
+    static construct {
+        gsettings = new GLib.Settings ("com.github.lainsce.palaura");
+    }
+
+    construct {
         application_id = "com.github.lainsce.palaura";
         program_name = _("Palaura");
         app_launcher = "com.github.lainsce.palaura.desktop";
         exec_name = "com.github.lainsce.palaura";
-
-        var quit_action = new SimpleAction ("quit", null);
-        add_action (quit_action);
-        add_accelerator ("<Control>q", "app.quit", null);
-        quit_action.activate.connect (() => {
-            if (main_window != null) {
-                main_window.destroy ();
-            }
-        });
     }
 
     public override void activate () {
@@ -35,7 +29,7 @@ public class Palaura.App : Granite.Application {
     }
 
     public static int main (string[] args) {
-        var application = new Palaura.App ();
+        var application = new Palaura.Application ();
         return application.run (args);
     }
 }

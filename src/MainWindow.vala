@@ -33,6 +33,33 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         normal_view.show_definition.connect (show_definition);
 
         return_button.clicked.connect (on_return_clicked);
+
+        key_press_event.connect ((e) => {
+            uint keycode = e.hardware_keycode;
+            if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
+                if (match_keycode (Gdk.Key.q, keycode)) {
+                    this.destroy ();
+                }
+            }
+            return false;
+        });
+    }
+
+#if VALA_0_42
+    protected bool match_keycode (uint keyval, uint code) {
+#else
+    protected bool match_keycode (int keyval, uint code) {
+#endif
+        Gdk.KeymapKey [] keys;
+        Gdk.Keymap keymap = Gdk.Keymap.get_for_display (Gdk.Display.get_default ());
+        if (keymap.get_entries_for_keyval (keyval, out keys)) {
+            foreach (var key in keys) {
+                if (code == key.keycode)
+                    return true;
+                }
+            }
+
+        return false;
     }
 
     public void show_definition (Core.Definition definition) {
@@ -92,9 +119,8 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
 
         return_history = new Gee.LinkedList<Palaura.View> ();
 
-        var settings = AppSettings.get_default ();
-        int x = settings.window_x;
-        int y = settings.window_y;
+        int x = Palaura.Application.gsettings.get_int("window-x");
+        int y = Palaura.Application.gsettings.get_int("window-y");
 
         if (x != -1 && y != -1) {
             move (x, y);
@@ -152,12 +178,10 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
-        var settings = AppSettings.get_default ();
-        
         int x, y;
         get_position (out x, out y);
-        settings.window_x = x;
-        settings.window_y = y;
+        Palaura.Application.gsettings.set_int("window-x", x);
+        Palaura.Application.gsettings.set_int("window-y", y);
         return false;
     }
 }

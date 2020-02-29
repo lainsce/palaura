@@ -1,6 +1,4 @@
-using Granite.Widgets;
-
-public class Palaura.Application : Granite.Application {
+public class Palaura.Application : Gtk.Application {
     public static GLib.Settings gsettings;
     public Palaura.MainWindow main_window;
 
@@ -10,9 +8,6 @@ public class Palaura.Application : Granite.Application {
 
     construct {
         application_id = "com.github.lainsce.palaura";
-        program_name = _("Palaura");
-        app_launcher = "com.github.lainsce.palaura.desktop";
-        exec_name = "com.github.lainsce.palaura";
     }
 
     public override void activate () {

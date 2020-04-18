@@ -12,8 +12,11 @@ public class Palaura.Core.Definition : Object {
         if (root.has_member ("text"))
             obj.text = root.get_string_member ("text");
 
-        if (root.has_member ("lexicalCategory"))
-            obj.lexical_category = root.get_string_member ("lexicalCategory");
+        if (root.has_member ("lexicalCategory")) {
+            Json.Object category = root.get_object_member ("lexicalCategory");
+            if (category.has_member ("text"))
+                obj.lexical_category = category.get_string_member ("text");
+        }
 
         if (root.has_member ("pronunciations")) {
             Json.Array pronunciations = root.get_array_member ("pronunciations");

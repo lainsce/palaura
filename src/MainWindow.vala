@@ -47,6 +47,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
 
         Palaura.Application.gsettings.changed.connect (() => {
             if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
+                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = true;
                 this.get_style_context ().add_class ("palaura-window-dark");
                 this.get_style_context ().remove_class ("palaura-window");
                 search_view.get_style_context ().add_class ("palaura-view-dark");
@@ -58,6 +59,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
                 stack.get_style_context ().add_class ("palaura-view-dark");
                 stack.get_style_context ().remove_class ("palaura-view");
             } else {
+                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = false;
                 this.get_style_context ().remove_class ("palaura-window-dark");
                 this.get_style_context ().add_class ("palaura-window");
                 search_view.get_style_context ().add_class ("palaura-view");

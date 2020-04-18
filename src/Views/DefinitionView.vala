@@ -65,9 +65,9 @@ public class Palaura.DefinitionView : Palaura.View {
                 } else {
                     pronunciation_str += "; ";
                 }
-    
+
                 pronunciation_str += pronunciations[i].phonetic_spelling;
-    
+
                 if (i == pronunciations.length - 1) {
                     pronunciation_str += "/";
                 }
@@ -79,9 +79,10 @@ public class Palaura.DefinitionView : Palaura.View {
 
         buffer.insert(ref iter, "\n", -1);
 
-        if(definition.lexical_category != null)
+        if(definition.lexical_category != null) {
             buffer.insert_with_tags (ref iter, @"▰  ", -1, tag_sense_lexicon);
             buffer.insert_with_tags (ref iter, @"$(definition.lexical_category)", -1, tag_lexical_category);
+        }
 
         buffer.insert(ref iter, "\n", -1);
 

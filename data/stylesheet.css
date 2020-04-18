@@ -6,6 +6,11 @@
     background-color: @colorPrimary;
 }
 
+.palaura-window-dark {
+    background-color: shade(@colorPrimary, 1.2);
+    color: #333;
+}
+
 .palaura-view {
     background-color: #FDF6E3;
     color: #586E75;
@@ -18,4 +23,18 @@
 .palaura-view:selected {
     background-color: #586E75;
     color: @textColorPrimary;
+}
+
+.palaura-view-dark {
+    background-color: #002B36;
+    color: #93A1A1;
+}
+
+.palaura-view-dark image {
+    color: #93A1A1;
+}
+
+.palaura-view-dark:selected {
+    background-color: #93A1A1;
+    color: #002B36;
 }

@@ -19,8 +19,7 @@ public class Palaura.DefinitionView : Palaura.View {
     construct {
         scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        scrolled_window.set_border_width (12);
-        scrolled_window.get_style_context ().add_class ("palaura-view");
+        scrolled_window.set_border_width (0);
         add (scrolled_window);
 
         text_view = new Gtk.SourceView ();
@@ -30,8 +29,32 @@ public class Palaura.DefinitionView : Palaura.View {
         buffer = new Gtk.SourceBuffer (null);
         text_view.buffer = buffer;
         var style_manager = Gtk.SourceStyleSchemeManager.get_default ();
-        var style = style_manager.get_scheme ("solarized-light");
-        buffer.set_style_scheme (style);
+        if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
+            var style = style_manager.get_scheme ("solarized-dark");
+            buffer.set_style_scheme (style);
+            scrolled_window.get_style_context ().add_class ("palaura-view-dark");
+            scrolled_window.get_style_context ().remove_class ("palaura-view");
+        } else {
+            var style = style_manager.get_scheme ("solarized-light");
+            buffer.set_style_scheme (style);
+            scrolled_window.get_style_context ().remove_class ("palaura-view-dark");
+            scrolled_window.get_style_context ().add_class ("palaura-view");
+        }
+
+        Palaura.Application.gsettings.changed.connect (() => {
+            if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
+                var style = style_manager.get_scheme ("solarized-dark");
+                buffer.set_style_scheme (style);
+                scrolled_window.get_style_context ().add_class ("palaura-view-dark");
+                scrolled_window.get_style_context ().remove_class ("palaura-view");
+            } else {
+                var style = style_manager.get_scheme ("solarized-light");
+                buffer.set_style_scheme (style);
+                scrolled_window.get_style_context ().remove_class ("palaura-view-dark");
+                scrolled_window.get_style_context ().add_class ("palaura-view");
+            }
+        });
+        
         scrolled_window.add (text_view);
 
         tag_word = buffer.create_tag (null, "weight", Pango.Weight.BOLD, "font", "serif 18");

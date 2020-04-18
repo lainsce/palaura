@@ -5,6 +5,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
     private Gtk.SearchEntry search_entry;
     private Gtk.Stack button_stack;
     private Gtk.Button return_button;
+    public Granite.ModeSwitch mode_switch;
 
     private Palaura.SearchView search_view;
     private Palaura.NormalView normal_view;
@@ -43,6 +44,32 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
             }
             return false;
         });
+
+        Palaura.Application.gsettings.changed.connect (() => {
+            if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
+                this.get_style_context ().add_class ("palaura-window-dark");
+                this.get_style_context ().remove_class ("palaura-window");
+                search_view.get_style_context ().add_class ("palaura-view-dark");
+                search_view.get_style_context ().remove_class ("palaura-view");
+                normal_view.get_style_context ().add_class ("palaura-view-dark");
+                normal_view.get_style_context ().remove_class ("palaura-view");
+                definition_view.get_style_context ().add_class ("palaura-view-dark");
+                definition_view.get_style_context ().remove_class ("palaura-view");
+                stack.get_style_context ().add_class ("palaura-view-dark");
+                stack.get_style_context ().remove_class ("palaura-view");
+            } else {
+                this.get_style_context ().remove_class ("palaura-window-dark");
+                this.get_style_context ().add_class ("palaura-window");
+                search_view.get_style_context ().add_class ("palaura-view");
+                search_view.get_style_context ().remove_class ("palaura-view-dark");
+                normal_view.get_style_context ().add_class ("palaura-view");
+                normal_view.get_style_context ().remove_class ("palaura-view-dark");
+                definition_view.get_style_context ().add_class ("palaura-view");
+                definition_view.get_style_context ().remove_class ("palaura-view-dark");
+                stack.get_style_context ().add_class ("palaura-view");
+                stack.get_style_context ().remove_class ("palaura-view-dark");
+            }
+        });
     }
 
 #if VALA_0_42
@@ -67,13 +94,18 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         push_view (definition_view);
     }
 
-    construct
-    {
+    construct {
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/com/github/lainsce/palaura/stylesheet.css");
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        var context = this.get_style_context ();
-        context.add_class ("palaura-window");
+
+        if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
+            this.get_style_context ().add_class ("palaura-window-dark");
+            this.get_style_context ().remove_class ("palaura-window");
+        } else {
+            this.get_style_context ().remove_class ("palaura-window-dark");
+            this.get_style_context ().add_class ("palaura-window");
+        }
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search words");
@@ -83,6 +115,28 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         return_button.get_style_context ().add_class ("back-button");
         button_stack.add (return_button);
         button_stack.no_show_all = true;
+
+        mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
+        mode_switch.primary_icon_tooltip_text = _("Light Mode");
+        mode_switch.secondary_icon_tooltip_text = _("Dark Mode");
+        mode_switch.valign = Gtk.Align.CENTER;
+        mode_switch.has_focus = false;
+
+        if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
+            mode_switch.active = true;
+        } else {
+            mode_switch.active = false;
+        }
+
+        mode_switch.notify["active"].connect (() => {
+            if (mode_switch.active) {
+                debug ("Get dark!");
+                Palaura.Application.gsettings.set_boolean("dark-mode", true);
+            } else {
+                debug ("Get light!");
+                Palaura.Application.gsettings.set_boolean("dark-mode", false);
+            }
+        });
 
         var menu_button = new Gtk.Button ();
         menu_button.has_tooltip = true;
@@ -100,17 +154,14 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         headerbar.has_subtitle = false;
         headerbar.pack_start (button_stack);
         headerbar.pack_end (menu_button);
-        headerbar.pack_end (search_entry);
+        headerbar.pack_end (mode_switch);
+        headerbar.pack_start (search_entry);
         set_titlebar (headerbar);
 
         search_view = new Palaura.SearchView();
-        search_view.get_style_context ().add_class ("palaura-view");
         normal_view = new Palaura.NormalView();
-        normal_view.get_style_context ().add_class ("palaura-view");
         definition_view = new Palaura.DefinitionView();
-        definition_view.get_style_context ().add_class ("palaura-view");
         stack = new Gtk.Stack ();
-        stack.get_style_context ().add_class ("palaura-view");
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (normal_view);
         stack.add (search_view);

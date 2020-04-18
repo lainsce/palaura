@@ -53,6 +53,14 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="1.2.1" date="2020-04-24">
+        <description>
+          <p>Release: Dark Space</p>
+          <ul>
+            <li>Added: Dark mode.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.2.0" date="2020-02-07">
         <description>
           <p>Release: Hot Revival</p>

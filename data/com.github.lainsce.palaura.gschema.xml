@@ -10,6 +10,11 @@
 			<summary>Window position</summary>
 			<description>The y axis of window position</description>
 		</key>
+		<key name="dark-mode" type="b">
+			<default>false</default>
+			<summary>Dark mode</summary>
+			<description>Whether dark mode is enabled or not</description>
+		</key>
 		<key name="dict-lang" type="s">
 			<default>'en-us'</default>
 			<summary>Dictionary language</summary>

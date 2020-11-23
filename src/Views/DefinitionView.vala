@@ -5,7 +5,7 @@ public class Palaura.DefinitionView : Palaura.View {
     Gtk.SourceBuffer buffer;
     Gtk.TextTag tag_word;
     Gtk.TextTag tag_pronunciation;
-    Gtk.TextTag tag_lexical_category;
+    Gtk.TextTag tag_pos;
     Gtk.TextTag tag_sense_numbering;
     Gtk.TextTag tag_sense_definition;
     Gtk.TextTag tag_sense_examples;
@@ -59,7 +59,7 @@ public class Palaura.DefinitionView : Palaura.View {
 
         tag_word = buffer.create_tag (null, "weight", Pango.Weight.BOLD, "font", "serif 18");
         tag_pronunciation = buffer.create_tag (null, "font", "serif 12");
-        tag_lexical_category = buffer.create_tag (null, "font", "serif 12", "pixels-above-lines", 8, "pixels-inside-wrap", 8);
+        tag_pos = buffer.create_tag (null, "font", "serif 12", "pixels-above-lines", 8, "pixels-inside-wrap", 8);
         tag_sense_numbering = buffer.create_tag (null, "font", "sans 12", "weight", Pango.Weight.HEAVY, "left-margin", 10, "pixels-above-lines", 8, "pixels-inside-wrap", 8);
         tag_sense_definition = buffer.create_tag (null, "font", "serif 12", "left-margin", 10);
         tag_sense_examples = buffer.create_tag (null, "font", "serif 12", "left-margin", 40, "pixels-above-lines", 8, "pixels-inside-wrap", 8);
@@ -75,25 +75,19 @@ public class Palaura.DefinitionView : Palaura.View {
         Gtk.TextIter iter;
         buffer.text = "";
         buffer.get_end_iter (out iter);
-        if(definition.text != null) {
-            buffer.insert_with_tags (ref iter, @"■ $(definition.text) ", -1, tag_word);
+        if(definition.word != null) {
+            buffer.insert_with_tags (ref iter, @"■ $(definition.word) ", -1, tag_word);
         }
 
-        var pronunciations = definition.get_pronunciations ();
+        var pronunciations = definition.get_phonetics ();
         string pronunciation_str = "";
         for (int i = 0; i < pronunciations.length; i++) {
             if (pronunciations.length > 0) {
                 if (i == 0) {
-                    pronunciation_str += "/";
                 } else {
                     pronunciation_str += "; ";
                 }
-
-                pronunciation_str += pronunciations[i].phonetic_spelling;
-
-                if (i == pronunciations.length - 1) {
-                    pronunciation_str += "/";
-                }
+                pronunciation_str += pronunciations[i].text;
             }
         }
         if(pronunciation_str != null) {
@@ -102,16 +96,18 @@ public class Palaura.DefinitionView : Palaura.View {
 
         buffer.insert(ref iter, "\n", -1);
 
-        if(definition.lexical_category != null) {
+        Core.Definition.Pos pos = definition.get_pos()[0];
+        if (pos != null) {
+            string pos_text = pos.text;
             buffer.insert_with_tags (ref iter, @"▰  ", -1, tag_sense_lexicon);
-            buffer.insert_with_tags (ref iter, @"$(definition.lexical_category)", -1, tag_lexical_category);
+            buffer.insert_with_tags (ref iter, @"$(pos_text)", -1, tag_pos);
         }
 
         buffer.insert(ref iter, "\n", -1);
 
         if(definition.get_senses() != null) {
             var senses = definition.get_senses();
-            for (int i = 0; i < senses.length; i++) {
+            for (int i = 0; i < senses.length +1; i++) {
                 var definitions = senses[i].get_definitions ();
                 if (definitions.length > 0) {
                     buffer.insert_with_tags (ref iter, @"$(i + 1).  ", -1, tag_sense_numbering);
@@ -121,7 +117,7 @@ public class Palaura.DefinitionView : Palaura.View {
                 var examples = senses[i].get_examples ();
                 if (examples.length > 0) {
                     buffer.insert_with_tags (ref iter, @"◆  ", -1, tag_sense_explaining);
-                    buffer.insert_with_tags (ref iter, @"$(examples[0].text)\n", -1, tag_sense_examples);
+                    buffer.insert_with_tags (ref iter, @"$(examples[0])\n", -1, tag_sense_examples);
                 }
             }
         }

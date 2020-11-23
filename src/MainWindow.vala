@@ -164,6 +164,7 @@ public class Palaura.MainWindow : Gtk.ApplicationWindow {
         normal_view = new Palaura.NormalView();
         definition_view = new Palaura.DefinitionView();
         stack = new Gtk.Stack ();
+        stack.margin_bottom = 6;
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (normal_view);
         stack.add (search_view);

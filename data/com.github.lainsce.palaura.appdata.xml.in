@@ -53,6 +53,14 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="1.5.0" date="2020-11-27">
+        <description>
+          <p>Release: Change of APIs</p>
+          <ul>
+            <li>Changes: New API based on Google Dictionary, should be more stable.</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.2.1" date="2020-04-24">
         <description>
           <p>Release: Dark Space</p>

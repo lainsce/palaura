@@ -3,12 +3,21 @@
 @define-color textColorPrimary #f5f5f5;
 
 .palaura-window {
-    background-color: @colorPrimary;
+    background-color: #FDF6E3;
+}
+
+.palaura-window,
+.palaura-window decoration {
+    border-radius: 6px;
 }
 
 .palaura-window-dark {
-    background-color: shade(@colorPrimary, 1.2);
-    color: #333;
+    background-color: #002B36;
+}
+
+.palaura-window-dark,
+.palaura-window-dark decoration {
+    border-radius: 6px;
 }
 
 .palaura-view {

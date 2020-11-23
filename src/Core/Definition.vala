@@ -1,100 +1,91 @@
 public class Palaura.Core.Definition : Object {
-    public string text;
-    public string lexical_category;
+    public string word;
 
+    Pronunciation[] phonetics = {};
+    Pos[] pos = {};
     Sense[] senses = {};
-    Pronunciation[] pronunciations = {};
 
     public static Core.Definition parse_json (Json.Object root) {
 
         Core.Definition obj = new Core.Definition ();
 
-        if (root.has_member ("text"))
-            obj.text = root.get_string_member ("text");
+        if (root.has_member ("word"))
+            obj.word = root.get_string_member ("word");
 
-        if (root.has_member ("lexicalCategory")) {
-            Json.Object category = root.get_object_member ("lexicalCategory");
-            if (category.has_member ("text"))
-                obj.lexical_category = category.get_string_member ("text");
+        if (root.has_member ("meanings")) {
+            Json.Array meanings = root.get_array_member ("meanings");
+            foreach (var pos in meanings.get_elements()) {
+                obj.pos += Pos.parse_json (pos.get_object ());
+                obj.senses += Sense.parse_json (pos.get_object ());
+            }
         }
 
-        if (root.has_member ("pronunciations")) {
-            Json.Array pronunciations = root.get_array_member ("pronunciations");
-            foreach (var pronunciation in pronunciations.get_elements())
-                obj.pronunciations += Pronunciation.parse_json (pronunciation.get_object ());
-        }
-
-        if (root.has_member ("entries")) {
-            Json.Array entries = root.get_array_member ("entries");
-            var obj_entries = entries.get_object_element(0);
-            Json.Array senses = obj_entries.get_array_member("senses");
-            foreach (var sense in senses.get_elements())
-                obj.senses += Sense.parse_json (sense.get_object ());
+        if (root.has_member ("phonetics")) {
+            Json.Array phonetics = root.get_array_member ("phonetics");
+            foreach (var pronunciation in phonetics.get_elements())
+                obj.phonetics += Pronunciation.parse_json (pronunciation.get_object ());
         }
 
         return obj;
 
     }
 
+    public class Pronunciation {
+        public string text;
+
+        public static Pronunciation parse_json(Json.Object root) {
+            Pronunciation obj = new Pronunciation();
+
+            obj.text = root.get_string_member("text");
+
+            return obj;
+        }
+    }
+
+    public class Pos {
+        public string text;
+
+        public static Pos parse_json(Json.Object root) {
+            Pos obj = new Pos();
+
+            obj.text = root.get_string_member("partOfSpeech");
+
+            return obj;
+        }
+    }
+
     public class Sense {
-        string[] definitions = {};
-        Example[] examples = {};
+        string[] definition = {};
+        string[] examples = {};
 
         public string[] get_definitions () {
-            return definitions;
+            return definition;
         }
 
-        public Example[] get_examples () {
+        public string[] get_examples () {
             return examples;
-        }
-
-        public class Example {
-            public string text;
-
-            public static Example parse_json (Json.Object root) {
-                Example obj = new Example ();
-
-                if (root.has_member ("text"))
-                    obj.text = root.get_string_member ("text");
-
-                return obj;
-            }
         }
 
         public static Sense parse_json (Json.Object root) {
             Sense obj = new Sense();
 
-            if (root.has_member ("definitions")) {
-                Json.Array definitions = root.get_array_member ("definitions");
-                foreach (var definition in definitions.get_elements ())
-                    obj.definitions += definition.get_string ();
-            }
-
-            if (root.has_member ("examples")) {
-                Json.Array examples = root.get_array_member ("examples");
-                foreach (var example in examples.get_elements ())
-                    obj.examples += Example.parse_json (example.get_object ());
+            Json.Array definitions = root.get_array_member ("definitions");
+            foreach (var def in definitions.get_elements()) {
+                var def_obj = def.get_object ();
+                obj.definition += def_obj.get_string_member ("definition");
+                obj.examples += def_obj.get_string_member ("example");
             }
 
             return obj;
         }
     }
 
-    public class Pronunciation {
-        public string phonetic_spelling;
-
-        public static Pronunciation parse_json(Json.Object root) {
-            Pronunciation obj = new Pronunciation();
-
-            if (root.has_member ("phoneticSpelling"))
-                obj.phonetic_spelling = root.get_string_member("phoneticSpelling");
-
-            return obj;
-        }
+    public Pronunciation[] get_phonetics () {
+        return phonetics;
     }
 
-    public Pronunciation[] get_pronunciations () {
-        return pronunciations;
+    public Pos[] get_pos () {
+        return pos;
     }
 
     public Sense[] get_senses () {

@@ -21,19 +21,23 @@ namespace Palaura {
         public WordContainerGrid(Core.Definition definition) {
             this.definition = definition;
 
-            markup = "<span weight=\"bold\" font_family=\"serif\" size=\"large\">"+definition.text+"</span>";
+            markup = "<span weight=\"bold\" font_family=\"serif\" size=\"large\">"+definition.word+" </span>";
 
-            Core.Definition.Pronunciation pronunciation = definition.get_pronunciations()[0];
+            Core.Definition.Pronunciation pronunciation = definition.get_phonetics()[0];
             if (pronunciation != null) {
-                string phonetic_spelling = pronunciation.phonetic_spelling;
-                markup += @"<span font_family=\"serif\" size=\"large\"> /"+phonetic_spelling+"/ </span>";
+                string phonetic_spelling = pronunciation.text;
+                markup += @"<span font_family=\"serif\" size=\"large\">"+phonetic_spelling+"</span>";
             }
 
-            markup += @"<span style=\"italic\" font_family=\"serif\" size=\"large\"> "+definition.lexical_category+" </span>";
+            Core.Definition.Pos pos = definition.get_pos()[0];
+            if (pos != null) {
+                string pos_text = pos.text;
+                markup += @"<span style=\"italic\" font_family=\"serif\" size=\"large\"> "+pos_text+" </span>";
+            }
 
             if(definition.get_senses ().length > 0)
                 markup += @"\n<span font_family=\"serif\" size=\"large\"> "+definition.get_senses ()[0].get_definitions ()[0]+" </span>";
-            
+
             text.set_markup (markup);
         }
     }

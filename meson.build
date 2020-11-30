@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.palaura', ['vala', 'c'],
-    version: '1.5.0'
+    version: '1.5.1'
 )
 
 # Import main lib files

@@ -16,7 +16,7 @@
 			<description>Whether dark mode is enabled or not</description>
 		</key>
 		<key name="dict-lang" type="s">
-			<default>'en-us'</default>
+			<default>'en'</default>
 			<summary>Dictionary language</summary>
 			<description>The language used to query words from its dictionary</description>
 		</key>

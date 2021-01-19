@@ -6,6 +6,8 @@ namespace Palaura {
         public Gtk.Stack stack;
 
         construct {
+            set_size_request (360, -1);
+
             alert_view = new Granite.Widgets.AlertView(_("No words found"), _("Try fixing your search term."), "dialog-information-symbolic");
             alert_view.show_all();
 
@@ -18,7 +20,7 @@ namespace Palaura {
             stack.add (alert_view);
 
             list_box = new Gtk.ListBox ();
-            list_box.expand = true;
+            list_box.vexpand = true;
             list_box.set_placeholder (stack);
             list_box.activate_on_single_click = true;
             list_box.row_activated.connect ((r) => {
@@ -42,7 +44,7 @@ namespace Palaura {
                 stack.get_style_context ().add_class ("palaura-view");
                 stack.get_style_context ().remove_class ("palaura-view-dark");
             }
-    
+
             Palaura.Application.gsettings.changed.connect (() => {
                 if (Palaura.Application.gsettings.get_boolean("dark-mode")) {
                     alert_view.get_style_context ().add_class ("palaura-view-dark");

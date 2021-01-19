@@ -1,49 +1,206 @@
-@define-color colorPrimary #cb5353;
-@define-color textColorPrimaryShadow #a45350;
-@define-color textColorPrimary #f5f5f5;
+@define-color accent #C85050;
+@define-color accent_color #C85050;
+@define-color accent_color_500 #C85050;
+@define-color accent_color_300 #C85050;
 
-.palaura-window {
-    background-color: #FDF6E3;
+window .csd:not(.popup):not(.menu) .titlebar,
+window:not(.popup):not(.menu) > decoration,
+window.unified,
+window.unified decoration,
+window.unified decoration-overlay {
+  border-radius: 8px;
 }
 
-.palaura-window,
-.palaura-window decoration {
-    border-radius: 6px;
+.title {
+    font-weight: 700;
+}
+
+.destructive-button:hover {
+    color: #D07070;
+}
+
+.palaura-back-button {
+    background: mix (@accent, @theme_bg_color, 0.90);
+    box-shadow: none;
+    border: 1px solid shade(@accent, 1.2);
+    border-radius: 8px;
+}
+
+.palaura-window {
+    background-color: #F7F7F7;
+    color: #111;
 }
 
 .palaura-window-dark {
-    background-color: #002B36;
-}
-
-.palaura-window-dark,
-.palaura-window-dark decoration {
-    border-radius: 6px;
+    background-color: #151515;
+    color: #FFF;
 }
 
 .palaura-view {
-    background-color: #FDF6E3;
-    color: #586E75;
+    background-color: #F7F7F7;
+    color: #111;
+}
+
+.palaura-view textview.view {
+    background-color: #F7F7F7;
+    color: #111;
 }
 
 .palaura-view image {
-    color: #586E75;
+    color: #111;
+}
+
+.palaura-view:backdrop {
+    background-color: #F0F0F0;
+}
+
+.palaura-view:backdrop textview.view {
+    background-color: #F0F0F0;
 }
 
 .palaura-view:selected {
-    background-color: #586E75;
-    color: @textColorPrimary;
+    background-color: @accent;
+    color: #FFF;
 }
 
 .palaura-view-dark {
-    background-color: #002B36;
-    color: #93A1A1;
+    background-color: #151515;
+    color: #FFF;
+}
+
+.palaura-view-dark textview.view {
+    background-color: #151515;
+    color: #FFF;
 }
 
 .palaura-view-dark image {
-    color: #93A1A1;
+    color: #FFF;
+}
+
+.palaura-view-dark:backdrop {
+    background-color: #333;
+}
+
+.palaura-view-dark:backdrop textview.view {
+    background-color: #333;
 }
 
 .palaura-view-dark:selected {
-    background-color: #93A1A1;
-    color: #002B36;
+    background-color: @accent;
+    color: #FFF;
+}
+
+.palaura-toolbar {
+    background: #F7F7F7;
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.palaura-toolbar .image-button {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.palaura-toolbar:backdrop {
+    background: #F0F0F0;
+}
+
+.palaura-toolbar-dark {
+    background: #151515;
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.palaura-toolbar-dark:backdrop {
+    background: #333;
+}
+
+.palaura-toolbar .image-button,
+.palaura-toolbar .title,
+.palaura-toolbar .titlebutton {
+    color: #000;
+}
+
+.palaura-toolbar:backdrop .image-button,
+.palaura-toolbar:backdrop .title,
+.palaura-toolbar:backdrop .titlebutton {
+    color: #333;
+}
+
+.palaura-toolbar-dark .image-button,
+.palaura-toolbar-dark .title,
+.palaura-toolbar-dark .titlebutton {
+    color: #FFF;
+}
+
+.palaura-toolbar-dark:backdrop .image-button,
+.palaura-toolbar-dark:backdrop .title,
+.palaura-toolbar-dark:backdrop .titlebutton {
+    color: #CCC;
+}
+
+.palaura-toolbar .back-button {
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    background: shade(@theme_bg_color, 0.95);
+}
+
+.palaura-toolbar .back-button:hover {
+    background: shade(@theme_bg_color, 0.90);
+}
+
+.palaura-toolbar .image-button {
+    border-radius: 8px;
+}
+
+.palaura-toolbar .image-button image {
+    padding: 0 6px;
+}
+
+.palaura-search {
+    border-radius: 8px;
+    box-shadow: none;
+    background: shade(@theme_bg_color, 0.95);
+ }
+
+.palaura-search:backdrop {
+  background: shade(@theme_bg_color, 1);
+}
+
+.palaura-toolbar .image-button:hover,
+.palaura-toolbar .image-button:active,
+.palaura-toolbar .image-button.toggle:checked {
+    background: shade(@theme_bg_color, 0.90);
+}
+
+.palaura-recents {
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.palaura-recents,
+.palaura-recents list,
+.palaura-recents treeview.view {
+    background: mix (@accent, @theme_bg_color, 0.90);
+}
+
+.palaura-recents list row {
+    background: mix (@accent, @theme_bg_color, 0.90);
+    border: 1px solid shade(@accent, 1.2);
+    color: @theme_fg_color;
+    padding: 2px;
+    margin: 2px 6px;
+    border-radius: 8px;
+}
+
+.palaura-recents list row:hover {
+    background: shade(@accent, 1.2);
+    border: 1px solid shade(@accent, 1.2);
+    color: @theme_bg_color;
+    padding: 2px;
+    margin: 2px 6px;
+    border-radius: 8px;
 }

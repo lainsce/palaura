@@ -10,6 +10,16 @@
 			<summary>Window position</summary>
 			<description>The y axis of window position</description>
 		</key>
+		<key name="window-w" type="i">
+			<default>300</default>
+			<summary>Window size</summary>
+			<description>The width of window position</description>
+		</key>
+		<key name="window-h" type="i">
+			<default>300</default>
+			<summary>Window size</summary>
+			<description>The height of window position</description>
+		</key>
 		<key name="dark-mode" type="b">
 			<default>false</default>
 			<summary>Dark mode</summary>
@@ -19,6 +29,16 @@
 			<default>'en'</default>
 			<summary>Dictionary language</summary>
 			<description>The language used to query words from its dictionary</description>
+		</key>
+		<key name="recents" type="as">
+			<default>['']</default>
+			<summary>Recent words</summary>
+			<description>The words logged to the recents pane</description>
+		</key>
+		<key name="bookmarks" type="as">
+			<default>['']</default>
+			<summary>Bookmarks</summary>
+			<description>The words logged to the bookmarks</description>
 		</key>
 	</schema>
 </schemalist>

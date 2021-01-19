@@ -53,6 +53,17 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2.0.0" date="2020-?-?">
+          <description>
+            <p>Release: Hello, Odin!</p>
+            <ul>
+              <li>Changed: Reworked the UI</li>
+              <li>Added: Synonyms and Antonyms lists</li>
+              <li>Added: Recents pane</li>
+            </ul>
+          </description>
+        </release>
+      </release>
       <release version="1.5.1" date="2020-11-30">
         <description>
           <p>Release: Change of APIs</p>

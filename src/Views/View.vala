@@ -4,7 +4,7 @@ public abstract class Palaura.View : Gtk.Stack {
     construct
     {
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        expand = true;
+        //expand = true;
     }
 
     public abstract string get_header_name ();

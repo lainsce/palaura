@@ -23,6 +23,8 @@ public class Palaura.SearchView : Palaura.View {
                 show_definition(definition);
             });
         list_view.edge_reached.connect (on_scroll);
+
+        set_size_request (360, -1);
     }
 
     construct {
@@ -50,7 +52,7 @@ public class Palaura.SearchView : Palaura.View {
     }
 
     public override string get_header_name () {
-        return _("Search");
+        return _("«Search");
     }
 
     public void search (string word, bool append = false) {

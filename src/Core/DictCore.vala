@@ -6,6 +6,8 @@ public class Palaura.Core.Dict {
                 dict = "en";
             } else if (Palaura.Application.gsettings.get_string("dict-lang") == "es") {
                 dict = "es";
+            } else if (Palaura.Application.gsettings.get_string("dict-lang") == "hi") {
+               dict = "hi";
             }
         });
 

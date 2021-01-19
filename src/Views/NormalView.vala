@@ -11,6 +11,6 @@ public class Palaura.NormalView : Palaura.View {
     }
 
     public override string get_header_name () {
-        return _("Home");
+        return _("«Home");
     }
 }

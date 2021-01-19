@@ -1,5 +1,6 @@
 public class Palaura.Application : Gtk.Application {
     public static GLib.Settings gsettings;
+    public static Granite.Settings grsettings;
     public Palaura.MainWindow main_window;
 
     static construct {
@@ -8,6 +9,8 @@ public class Palaura.Application : Gtk.Application {
 
     construct {
         application_id = "com.github.lainsce.palaura";
+
+        grsettings = Granite.Settings.get_default ();
     }
 
     public override void activate () {
@@ -25,6 +28,7 @@ public class Palaura.Application : Gtk.Application {
 
     public static int main (string[] args) {
         var application = new Palaura.Application ();
+        Gst.init (ref args);
         return application.run (args);
     }
 }

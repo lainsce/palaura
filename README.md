@@ -26,6 +26,7 @@ gtksourceview-3.0
 meson
 libsoup2.4
 libjson-glib
+libgstreamer1.0-dev
 ```
 
 ## Building
